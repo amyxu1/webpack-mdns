@@ -1,9 +1,18 @@
 #include <absl/strings/str_split.h>
+#include <cstdio>
+#include <iostream>
 #include <netdb.h>
+#include <stdlib.h>
 #include <sys/epoll.h>
+#include <sys/select.h>
 #include <sys/socket.h>
 
 #include "NetworkController.hpp"
+
+NetworkController::NetworkController()
+{
+  NetworkController(absl::flat_hash_set<std::string>());
+}
 
 NetworkController::NetworkController(absl::flat_hash_set<std::string> services) 
 {
@@ -23,6 +32,7 @@ void NetworkController::setup_ipv4()
 
   m_socket = mdns_socket_open_ipv4(m_addr);
   mdns_socket_setup_ipv4(m_socket, m_addr);
+  std::cout << "setup_ipv4(): socket setup completed.\n";
 }
 
 void NetworkController::listen(mdns_record_callback_fn callback)
@@ -36,29 +46,24 @@ void NetworkController::listen(mdns_record_callback_fn callback)
   serv_rec.address_ipv6 = 0;
   serv_rec.port = m_port;
 
-  int listen_fd = epoll_create1(0);
-  int running = 1;
-
-  struct epoll_event event;
-  event.events = EPOLLIN;
-  event.data.fd = listen_fd;
-
-  if (epoll_ctl(listen_fd, EPOLL_CTL_ADD, 0, &event))
+  while (1)
   {
-    fprintf(stderr, "Failed to add listen fd to epoll\n");
-    close(listen_fd);
-    return;
-  }
-
-  while (running)
-  {
-                // Or maybe I need an array of events (events[i])
-    printf("\nPolling for input...\n", event.data.fd);
-    running = epoll_wait(listen_fd, &event, 1, 30000);
-    if (running > 0)
+    int nfds = 0;
+    fd_set readfs;
+    FD_ZERO(&readfs);
+    if (m_socket >= nfds)
     {
-      mdns_socket_listen(m_socket, buffer, capacity, callback, &serv_rec);
+      nfds = m_socket + 1;
     }
+    FD_SET(m_socket, &readfs);
+
+    if (select(nfds, &readfs, 0, 0, 0) >= 0)
+    {
+      if (FD_ISSET(m_socket, &readfs)) {
+        mdns_socket_listen(m_socket, buffer, capacity, callback, &serv_rec);
+      }
+    }
+    FD_SET(m_socket, &readfs);
   }
 }
 
@@ -68,7 +73,7 @@ void NetworkController::query(std::string service, mdns_record_callback_fn callb
   void* buffer = malloc(capacity);
   void* user_data = 0;
 
-  printf("Sending mDNS query: %s\n", service);
+  std::cout << "Sending mDNS query: " << service << "\n";
 
   // queryid of 0 signifies a multicast query
   int query_id = mdns_query_send(m_socket, MDNS_RECORDTYPE_PTR, service.c_str(), 
@@ -76,20 +81,41 @@ void NetworkController::query(std::string service, mdns_record_callback_fn callb
 
   if (query_id)
   {
-    printf("Failed to send mDNS query: %s\n", strerror(errno));
+    std::cout << "Failed to send mDNS query: " strerror(errno) << "\n";
   }
 
-  printf("Reading mDNS query responses");
-  int status = mdns_query_recv(m_socket, buffer, capacity, callback, user_data, query_id);
+  std::cout << "Reading mDNS query responses\n";
+  int res;
+  do
+  {
+    struct timeval timeout;
+    timeout.tv_sec = 5;
+    timeout.tv_usec = 0;
+
+    int nfds = 0;
+    fd_set readfs;
+    FD_ZERO(&readfs);
+    if (m_socket >= nfds)
+      nfds = m_socket + 1;
+    FD_SET(m_socket, &readfs);
+
+    res = select(nfds, &readfs, 0, 0, &timeout);
+    if (res > 0)
+    {
+       if (FD_ISSET(m_socket, &readfs))
+       {
+          int status = mdns_query_recv(m_socket, buffer, capacity, callback, user_data, query_id);
+       }
+       FD_SET(m_socket, &readfs);
+    }
+  } while (res > 0);
 }
 
 int NetworkController::query_callback(int sock, const struct sockaddr* from, 
-  size_t addr_len, mdns_entry_type_t entry,
-  uint16_t query_id, uint16_t rtype, uint16_t rclass, 
-  uint32_t ttl, const void* data, size_t size, 
-  size_t name_offset, size_t name_length, 
-  size_t record_offset, size_t record_length, 
-  void* user_data)
+  size_t addr_len, mdns_entry_type_t entry, uint16_t query_id, uint16_t rtype, 
+  uint16_t rclass, uint32_t ttl, const void* data, size_t size, 
+  size_t name_offset, size_t name_length, size_t record_offset, 
+  size_t record_length, void* user_data)
 {
   static char addrbuffer[64];
   static char entrybuffer[256];
@@ -110,9 +136,10 @@ int NetworkController::query_callback(int sock, const struct sockaddr* from,
     std::string namestr(mdns_record_parse_ptr(data, size, record_offset, record_length,
       namebuffer, sizeof(namebuffer)).str);
 
-    printf("%.*s : %s %.*s PTR %.*s rclass 0x%x ttl %u length %d\n",
-     from_addr_str, entrytype, entrystr, namestr, rclass, ttl, 
-     (int)record_length);
+    std::cout << from_addr_str << " : " << entrytype << " " << entrystr << " PTR " 
+      << namestr << " rclass 0x" << rclass << " ttl " << ttl << " length " 
+      << (int)record_length << "\n";
+
     if (!m_urlTable->contains(entrystr))
     {
       (*m_urlTable)[entrystr] = absl::flat_hash_set<std::string>();
@@ -125,9 +152,9 @@ int NetworkController::query_callback(int sock, const struct sockaddr* from,
     mdns_record_parse_srv(data, size, record_offset, record_length,
       namebuffer, sizeof(namebuffer));
 
-    printf("%.*s : %s %.*s SRV %.*s priority %d weight %d port %d\n",
-     from_addr_str, entrytype, entrystr, srv.name, srv.priority, 
-     srv.weight, srv.port);
+    std::string << from_addr_str << " : " << entrytype << " " << entrystr << " SRV "
+      << std::string(srv.name.str) << " priority " << srv.priority
+      << " weight " << srv.weight << " port " << srv.port << "\n";
 
     std::pair<std::string, std::string> hostnameAndService = 
     parse_srv_name(std::string(srv.name.str));
@@ -150,43 +177,45 @@ int NetworkController::query_callback(int sock, const struct sockaddr* from,
     ip_address_to_string(namebuffer, sizeof(namebuffer), &addr, 
      sizeof(addr));
 
-    printf("%.*s : %s %.*s A %.*s\n", from_addr_str, entrytype,
-     entrystr, addr_str);
+    std::cout << from_addr_str << " : " << entrytype << " " << entrystr << " A "
+      << addr_str << "\n";
 
   } else {
-    printf("%.*s : %s %.*s type %u rclass 0x%x ttl %u length %d\n",
-     from_addr_str, entrytype, entrystr, rtype, rclass, ttl, 
-     (int)record_length);
+    std::cout << from_addr_str << " : " << entrytype << " " << entrystr << " type "
+      << rtype << " rclass 0x" << rclass << " ttl " << ttl << " length "
+      << (int)record_length << "\n";
   }
   return 0;
 }
 
 int
-NetworkController::service_callback(int sock, const struct sockaddr* from, size_t addrlen, mdns_entry_type_t entry,
- uint16_t query_id, uint16_t rtype, uint16_t rclass, uint32_t ttl, const void* data,
- size_t size, size_t name_offset, size_t name_length, size_t record_offset,
- size_t record_length, void* user_data) {
+NetworkController::service_callback(int sock, const struct sockaddr* from, 
+  size_t addrlen, mdns_entry_type_t entry, uint16_t query_id, uint16_t rtype, 
+  uint16_t rclass, uint32_t ttl, const void* data, size_t size, 
+  size_t name_offset, size_t name_length, size_t record_offset, size_t 
+  record_length, void* user_data) 
+{
   static char sendbuffer[256];
   static char namebuffer[256];
   static char addrbuffer[64];
 
-// only process questions
+  // only process questions
   if (entry != MDNS_ENTRYTYPE_QUESTION)
     return 0;
 
-// get address
+  // get address
   std::string fromaddrstr = ip_address_to_string(addrbuffer, sizeof(addrbuffer), (const struct sockaddr_in*)from, addrlen);
   if (rtype == MDNS_RECORDTYPE_PTR) {
     std::string service(mdns_record_parse_ptr(data, size, record_offset, record_length,
       namebuffer, sizeof(namebuffer)).str);
-    printf("%.*s : question PTR %.*s\n", fromaddrstr, service);
+    std::cout << fromaddrstr << " : question PTR " << service << "\n";
 
-  // if host has web bundle, respond
+    // if host has web bundle, respond
     if (has_service(service)) {
       uint16_t unicast = rclass & MDNS_UNICAST_RESPONSE;
 
-      printf("  --> answer %s.%s port %d (%s)\n", m_hostname, service,
-       m_port, (unicast ? "unicast" : "multicast"));
+      std::cout << "  --> answer " << m_hostname << "." << service << " port " << m_port
+                << " (" << (unicast ? "unicast" : "multicast") << ")\n";
 
       if (!unicast)
         addrlen = 0;
@@ -202,9 +231,9 @@ NetworkController::service_callback(int sock, const struct sockaddr* from, size_
       mdns_record_parse_srv(data, size, record_offset, record_length,
         namebuffer, sizeof(namebuffer));
 
-      printf("%.*s : question SRV %.*s\n", fromaddrstr, MDNS_STRING_FORMAT(service.name));
+      std::cout << fromaddrstr << " : question SRV " << MDNS_STRING_FORMAT(service.name) << "\n"; 
 
-  // if host has service, respond
+      // if host has service, respond
       if (has_service(std::string(service.name.str)))
       {
         mdns_query_answer(sock, from, addrlen, sendbuffer, sizeof(sendbuffer), query_id,

@@ -13,7 +13,8 @@ typedef struct {
 
 class NetworkController
 {
-public:
+  NetworkController();
+
   NetworkController(absl::flat_hash_set<std::string> services);
 
   /**
@@ -60,8 +61,7 @@ private:
    *  convert an ip address to string format.
    */
   std::string ip_address_to_string(char* buffer, size_t capacity, 
-    const struct sockaddr_in* addr,
-    size_t addrlen);
+    const struct sockaddr_in* addr, size_t addrlen);
 
   /**
    *  parse name returned in srv record into service name (web bundle name)
@@ -74,7 +74,7 @@ private:
    */
   bool has_service(std::string srv_name)
   {
-    return m_services.contains(srv_name);
+    return m_services.contains(srv_name.substr(0, srv_name.size()-1));
   }
 
   /** table mapping from hostname to available web bundles */

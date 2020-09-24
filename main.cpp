@@ -1,4 +1,5 @@
 #include <absl/container/flat_hash_set.h> 
+#include iostream
 #include <sys/epoll.h>
 
 #include "NetworkController.hpp"
@@ -27,7 +28,7 @@ static int wrapped_service_callback(int sock, const struct sockaddr* from,
   size_t record_offset, size_t record_length,
   void* user_data)
 {
-  nc.query_callback(sock, from, addr_len, entry, query_id, rtype, rclass,                  
+  nc.service_callback(sock, from, addr_len, entry, query_id, rtype, rclass,                  
     ttl, data, size, name_offset, name_length,  
     record_offset, record_length, user_data);
   return 0;
@@ -38,6 +39,7 @@ int main(int argc, const char* const* argv)
 {
   int mode = -1;
   std::string service;
+  absl::flat_hash_set<std::string> webbundle_list;
 
   for (int i = 0; i < argc; i++)
   {
@@ -53,17 +55,16 @@ int main(int argc, const char* const* argv)
     {
       mode = 2;
 
-      absl::flat_hash_set<std::string> webbundle_list;
       i++;
       while (i < argc)
       {
         webbundle_list.insert(argv[i]);
+        i++;
       }
     }
   }
 
   NetworkController nc = NetworkController(webbundle_list);
-
   if (mode == 1)
   {
     nc.query(service, wrapped_query_callback);
