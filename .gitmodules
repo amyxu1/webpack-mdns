@@ -1,0 +1,9 @@
+[submodule "grpc"]
+	path = grpc
+	url = https://github.com/grpc/grpc
+[submodule "mdns"]
+	path = mdns
+	url = https://github.com/mjansson/mdns/
+[submodule "abseil-cpp"]
+	path = abseil-cpp
+	url = https://github.com/abseil/abseil-cpp

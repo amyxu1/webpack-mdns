@@ -1,5 +1,5 @@
 #include <absl/container/flat_hash_set.h> 
-#include iostream
+#include <iostream>
 #include <sys/epoll.h>
 
 #include "NetworkController.hpp"
@@ -40,10 +40,9 @@ int main(int argc, const char* const* argv)
   int mode = -1;
   std::string service;
   absl::flat_hash_set<std::string> webbundle_list;
-
   for (int i = 0; i < argc; i++)
   {
-    if (strcmp(argv[i], "--query"))
+    if (!strcmp(argv[i], "--query"))
     {
       mode = 1;
       i++;
@@ -51,15 +50,14 @@ int main(int argc, const char* const* argv)
       {
         service = argv[i];
       }
-    } else if (strcmp(argv[i], "--listen"))
+    } else if (!strcmp(argv[i], "--listen"))
     {
       mode = 2;
-
       i++;
       while (i < argc)
       {
         webbundle_list.insert(argv[i]);
-        i++;
+      	i++;
       }
     }
   }

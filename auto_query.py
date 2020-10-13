@@ -7,7 +7,7 @@ MAX_WAIT_TIME_SECONDS = 15
 MAX_QUERY_TIMEOUT_SECONDS = 30
 
 def send_query(webpack_name):
-	cl_args = ['./mdns-controller', '--query', webpack_name]
+	cl_args = ['/root/webpack-mdns/mdns-controller', '--query', webpack_name]
 	start_time = time.perf_counter()
 	subprocess.run(cl_args, timeout=MAX_QUERY_TIMEOUT_SECONDS)
 	end_time = time.perf_counter()
@@ -20,8 +20,8 @@ def send_query(webpack_name):
 	return total_time
 
 def main(argv):
-	if len(argv) < 2:
-		print('usage: python auto_query.py [# of queries to send] [wpack name(s)]')
+	if len(argv) < 3:
+		print('usage: python3 auto_query.py [# of queries to send] [wpack name(s)]')
 		sys.exit(2)
 
 	num_queries = int(argv[1])
@@ -38,7 +38,7 @@ def main(argv):
 		total_time_sum += runtime
 
 	# write time scores out to file
-	output = open('auto_query_' + str(num_queries) + '.csv', 'w+')
+	output = open('/root/webpack-mdns/auto_query_' + str(num_queries) + '.csv', 'w+')
 	output.writelines(total_time_list)
 	output.close()
 
