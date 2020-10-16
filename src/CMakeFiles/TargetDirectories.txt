@@ -1,0 +1,6 @@
+/root/webpack-mdns/src/CMakeFiles/rebuild_cache.dir
+/root/webpack-mdns/src/CMakeFiles/edit_cache.dir
+/root/webpack-mdns/src/CMakeFiles/mdns-controller.dir
+/root/webpack-mdns/src/network_controller/CMakeFiles/rebuild_cache.dir
+/root/webpack-mdns/src/network_controller/CMakeFiles/edit_cache.dir
+/root/webpack-mdns/src/network_controller/CMakeFiles/NetworkController.dir

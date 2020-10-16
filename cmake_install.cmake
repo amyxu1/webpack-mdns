@@ -39,8 +39,8 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/root/webpack-mdns/abseil-cpp/cmake_install.cmake")
-  include("/root/webpack-mdns/mdns/cmake_install.cmake")
+  include("/root/webpack-mdns/src/cmake_install.cmake")
+  include("/root/webpack-mdns/thirdparty/cmake_install.cmake")
 
 endif()
 

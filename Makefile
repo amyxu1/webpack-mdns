@@ -166,8 +166,21 @@ mdns-controller: cmake_check_build_system
 
 # fast build rule for target.
 mdns-controller/fast:
-	$(MAKE) -f CMakeFiles/mdns-controller.dir/build.make CMakeFiles/mdns-controller.dir/build
+	$(MAKE) -f src/CMakeFiles/mdns-controller.dir/build.make src/CMakeFiles/mdns-controller.dir/build
 .PHONY : mdns-controller/fast
+
+#=============================================================================
+# Target rules for targets named NetworkController
+
+# Build rule for target.
+NetworkController: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 NetworkController
+.PHONY : NetworkController
+
+# fast build rule for target.
+NetworkController/fast:
+	$(MAKE) -f src/network_controller/CMakeFiles/NetworkController.dir/build.make src/network_controller/CMakeFiles/NetworkController.dir/build
+.PHONY : NetworkController/fast
 
 #=============================================================================
 # Target rules for targets named absl_exponential_biased
@@ -179,7 +192,7 @@ absl_exponential_biased: cmake_check_build_system
 
 # fast build rule for target.
 absl_exponential_biased/fast:
-	$(MAKE) -f abseil-cpp/absl/base/CMakeFiles/absl_exponential_biased.dir/build.make abseil-cpp/absl/base/CMakeFiles/absl_exponential_biased.dir/build
+	$(MAKE) -f thirdparty/abseil-cpp/absl/base/CMakeFiles/absl_exponential_biased.dir/build.make thirdparty/abseil-cpp/absl/base/CMakeFiles/absl_exponential_biased.dir/build
 .PHONY : absl_exponential_biased/fast
 
 #=============================================================================
@@ -192,7 +205,7 @@ absl_strerror: cmake_check_build_system
 
 # fast build rule for target.
 absl_strerror/fast:
-	$(MAKE) -f abseil-cpp/absl/base/CMakeFiles/absl_strerror.dir/build.make abseil-cpp/absl/base/CMakeFiles/absl_strerror.dir/build
+	$(MAKE) -f thirdparty/abseil-cpp/absl/base/CMakeFiles/absl_strerror.dir/build.make thirdparty/abseil-cpp/absl/base/CMakeFiles/absl_strerror.dir/build
 .PHONY : absl_strerror/fast
 
 #=============================================================================
@@ -205,7 +218,7 @@ absl_spinlock_wait: cmake_check_build_system
 
 # fast build rule for target.
 absl_spinlock_wait/fast:
-	$(MAKE) -f abseil-cpp/absl/base/CMakeFiles/absl_spinlock_wait.dir/build.make abseil-cpp/absl/base/CMakeFiles/absl_spinlock_wait.dir/build
+	$(MAKE) -f thirdparty/abseil-cpp/absl/base/CMakeFiles/absl_spinlock_wait.dir/build.make thirdparty/abseil-cpp/absl/base/CMakeFiles/absl_spinlock_wait.dir/build
 .PHONY : absl_spinlock_wait/fast
 
 #=============================================================================
@@ -218,7 +231,7 @@ absl_raw_logging_internal: cmake_check_build_system
 
 # fast build rule for target.
 absl_raw_logging_internal/fast:
-	$(MAKE) -f abseil-cpp/absl/base/CMakeFiles/absl_raw_logging_internal.dir/build.make abseil-cpp/absl/base/CMakeFiles/absl_raw_logging_internal.dir/build
+	$(MAKE) -f thirdparty/abseil-cpp/absl/base/CMakeFiles/absl_raw_logging_internal.dir/build.make thirdparty/abseil-cpp/absl/base/CMakeFiles/absl_raw_logging_internal.dir/build
 .PHONY : absl_raw_logging_internal/fast
 
 #=============================================================================
@@ -231,7 +244,7 @@ absl_throw_delegate: cmake_check_build_system
 
 # fast build rule for target.
 absl_throw_delegate/fast:
-	$(MAKE) -f abseil-cpp/absl/base/CMakeFiles/absl_throw_delegate.dir/build.make abseil-cpp/absl/base/CMakeFiles/absl_throw_delegate.dir/build
+	$(MAKE) -f thirdparty/abseil-cpp/absl/base/CMakeFiles/absl_throw_delegate.dir/build.make thirdparty/abseil-cpp/absl/base/CMakeFiles/absl_throw_delegate.dir/build
 .PHONY : absl_throw_delegate/fast
 
 #=============================================================================
@@ -244,7 +257,7 @@ absl_periodic_sampler: cmake_check_build_system
 
 # fast build rule for target.
 absl_periodic_sampler/fast:
-	$(MAKE) -f abseil-cpp/absl/base/CMakeFiles/absl_periodic_sampler.dir/build.make abseil-cpp/absl/base/CMakeFiles/absl_periodic_sampler.dir/build
+	$(MAKE) -f thirdparty/abseil-cpp/absl/base/CMakeFiles/absl_periodic_sampler.dir/build.make thirdparty/abseil-cpp/absl/base/CMakeFiles/absl_periodic_sampler.dir/build
 .PHONY : absl_periodic_sampler/fast
 
 #=============================================================================
@@ -257,7 +270,7 @@ absl_log_severity: cmake_check_build_system
 
 # fast build rule for target.
 absl_log_severity/fast:
-	$(MAKE) -f abseil-cpp/absl/base/CMakeFiles/absl_log_severity.dir/build.make abseil-cpp/absl/base/CMakeFiles/absl_log_severity.dir/build
+	$(MAKE) -f thirdparty/abseil-cpp/absl/base/CMakeFiles/absl_log_severity.dir/build.make thirdparty/abseil-cpp/absl/base/CMakeFiles/absl_log_severity.dir/build
 .PHONY : absl_log_severity/fast
 
 #=============================================================================
@@ -270,7 +283,7 @@ absl_malloc_internal: cmake_check_build_system
 
 # fast build rule for target.
 absl_malloc_internal/fast:
-	$(MAKE) -f abseil-cpp/absl/base/CMakeFiles/absl_malloc_internal.dir/build.make abseil-cpp/absl/base/CMakeFiles/absl_malloc_internal.dir/build
+	$(MAKE) -f thirdparty/abseil-cpp/absl/base/CMakeFiles/absl_malloc_internal.dir/build.make thirdparty/abseil-cpp/absl/base/CMakeFiles/absl_malloc_internal.dir/build
 .PHONY : absl_malloc_internal/fast
 
 #=============================================================================
@@ -283,7 +296,7 @@ absl_scoped_set_env: cmake_check_build_system
 
 # fast build rule for target.
 absl_scoped_set_env/fast:
-	$(MAKE) -f abseil-cpp/absl/base/CMakeFiles/absl_scoped_set_env.dir/build.make abseil-cpp/absl/base/CMakeFiles/absl_scoped_set_env.dir/build
+	$(MAKE) -f thirdparty/abseil-cpp/absl/base/CMakeFiles/absl_scoped_set_env.dir/build.make thirdparty/abseil-cpp/absl/base/CMakeFiles/absl_scoped_set_env.dir/build
 .PHONY : absl_scoped_set_env/fast
 
 #=============================================================================
@@ -296,7 +309,7 @@ absl_base: cmake_check_build_system
 
 # fast build rule for target.
 absl_base/fast:
-	$(MAKE) -f abseil-cpp/absl/base/CMakeFiles/absl_base.dir/build.make abseil-cpp/absl/base/CMakeFiles/absl_base.dir/build
+	$(MAKE) -f thirdparty/abseil-cpp/absl/base/CMakeFiles/absl_base.dir/build.make thirdparty/abseil-cpp/absl/base/CMakeFiles/absl_base.dir/build
 .PHONY : absl_base/fast
 
 #=============================================================================
@@ -309,7 +322,7 @@ absl_raw_hash_set: cmake_check_build_system
 
 # fast build rule for target.
 absl_raw_hash_set/fast:
-	$(MAKE) -f abseil-cpp/absl/container/CMakeFiles/absl_raw_hash_set.dir/build.make abseil-cpp/absl/container/CMakeFiles/absl_raw_hash_set.dir/build
+	$(MAKE) -f thirdparty/abseil-cpp/absl/container/CMakeFiles/absl_raw_hash_set.dir/build.make thirdparty/abseil-cpp/absl/container/CMakeFiles/absl_raw_hash_set.dir/build
 .PHONY : absl_raw_hash_set/fast
 
 #=============================================================================
@@ -322,7 +335,7 @@ absl_hashtablez_sampler: cmake_check_build_system
 
 # fast build rule for target.
 absl_hashtablez_sampler/fast:
-	$(MAKE) -f abseil-cpp/absl/container/CMakeFiles/absl_hashtablez_sampler.dir/build.make abseil-cpp/absl/container/CMakeFiles/absl_hashtablez_sampler.dir/build
+	$(MAKE) -f thirdparty/abseil-cpp/absl/container/CMakeFiles/absl_hashtablez_sampler.dir/build.make thirdparty/abseil-cpp/absl/container/CMakeFiles/absl_hashtablez_sampler.dir/build
 .PHONY : absl_hashtablez_sampler/fast
 
 #=============================================================================
@@ -335,7 +348,7 @@ absl_stacktrace: cmake_check_build_system
 
 # fast build rule for target.
 absl_stacktrace/fast:
-	$(MAKE) -f abseil-cpp/absl/debugging/CMakeFiles/absl_stacktrace.dir/build.make abseil-cpp/absl/debugging/CMakeFiles/absl_stacktrace.dir/build
+	$(MAKE) -f thirdparty/abseil-cpp/absl/debugging/CMakeFiles/absl_stacktrace.dir/build.make thirdparty/abseil-cpp/absl/debugging/CMakeFiles/absl_stacktrace.dir/build
 .PHONY : absl_stacktrace/fast
 
 #=============================================================================
@@ -348,7 +361,7 @@ absl_symbolize: cmake_check_build_system
 
 # fast build rule for target.
 absl_symbolize/fast:
-	$(MAKE) -f abseil-cpp/absl/debugging/CMakeFiles/absl_symbolize.dir/build.make abseil-cpp/absl/debugging/CMakeFiles/absl_symbolize.dir/build
+	$(MAKE) -f thirdparty/abseil-cpp/absl/debugging/CMakeFiles/absl_symbolize.dir/build.make thirdparty/abseil-cpp/absl/debugging/CMakeFiles/absl_symbolize.dir/build
 .PHONY : absl_symbolize/fast
 
 #=============================================================================
@@ -361,7 +374,7 @@ absl_failure_signal_handler: cmake_check_build_system
 
 # fast build rule for target.
 absl_failure_signal_handler/fast:
-	$(MAKE) -f abseil-cpp/absl/debugging/CMakeFiles/absl_failure_signal_handler.dir/build.make abseil-cpp/absl/debugging/CMakeFiles/absl_failure_signal_handler.dir/build
+	$(MAKE) -f thirdparty/abseil-cpp/absl/debugging/CMakeFiles/absl_failure_signal_handler.dir/build.make thirdparty/abseil-cpp/absl/debugging/CMakeFiles/absl_failure_signal_handler.dir/build
 .PHONY : absl_failure_signal_handler/fast
 
 #=============================================================================
@@ -374,7 +387,7 @@ absl_debugging_internal: cmake_check_build_system
 
 # fast build rule for target.
 absl_debugging_internal/fast:
-	$(MAKE) -f abseil-cpp/absl/debugging/CMakeFiles/absl_debugging_internal.dir/build.make abseil-cpp/absl/debugging/CMakeFiles/absl_debugging_internal.dir/build
+	$(MAKE) -f thirdparty/abseil-cpp/absl/debugging/CMakeFiles/absl_debugging_internal.dir/build.make thirdparty/abseil-cpp/absl/debugging/CMakeFiles/absl_debugging_internal.dir/build
 .PHONY : absl_debugging_internal/fast
 
 #=============================================================================
@@ -387,7 +400,7 @@ absl_demangle_internal: cmake_check_build_system
 
 # fast build rule for target.
 absl_demangle_internal/fast:
-	$(MAKE) -f abseil-cpp/absl/debugging/CMakeFiles/absl_demangle_internal.dir/build.make abseil-cpp/absl/debugging/CMakeFiles/absl_demangle_internal.dir/build
+	$(MAKE) -f thirdparty/abseil-cpp/absl/debugging/CMakeFiles/absl_demangle_internal.dir/build.make thirdparty/abseil-cpp/absl/debugging/CMakeFiles/absl_demangle_internal.dir/build
 .PHONY : absl_demangle_internal/fast
 
 #=============================================================================
@@ -400,7 +413,7 @@ absl_leak_check: cmake_check_build_system
 
 # fast build rule for target.
 absl_leak_check/fast:
-	$(MAKE) -f abseil-cpp/absl/debugging/CMakeFiles/absl_leak_check.dir/build.make abseil-cpp/absl/debugging/CMakeFiles/absl_leak_check.dir/build
+	$(MAKE) -f thirdparty/abseil-cpp/absl/debugging/CMakeFiles/absl_leak_check.dir/build.make thirdparty/abseil-cpp/absl/debugging/CMakeFiles/absl_leak_check.dir/build
 .PHONY : absl_leak_check/fast
 
 #=============================================================================
@@ -413,7 +426,7 @@ absl_leak_check_disable: cmake_check_build_system
 
 # fast build rule for target.
 absl_leak_check_disable/fast:
-	$(MAKE) -f abseil-cpp/absl/debugging/CMakeFiles/absl_leak_check_disable.dir/build.make abseil-cpp/absl/debugging/CMakeFiles/absl_leak_check_disable.dir/build
+	$(MAKE) -f thirdparty/abseil-cpp/absl/debugging/CMakeFiles/absl_leak_check_disable.dir/build.make thirdparty/abseil-cpp/absl/debugging/CMakeFiles/absl_leak_check_disable.dir/build
 .PHONY : absl_leak_check_disable/fast
 
 #=============================================================================
@@ -426,7 +439,7 @@ absl_examine_stack: cmake_check_build_system
 
 # fast build rule for target.
 absl_examine_stack/fast:
-	$(MAKE) -f abseil-cpp/absl/debugging/CMakeFiles/absl_examine_stack.dir/build.make abseil-cpp/absl/debugging/CMakeFiles/absl_examine_stack.dir/build
+	$(MAKE) -f thirdparty/abseil-cpp/absl/debugging/CMakeFiles/absl_examine_stack.dir/build.make thirdparty/abseil-cpp/absl/debugging/CMakeFiles/absl_examine_stack.dir/build
 .PHONY : absl_examine_stack/fast
 
 #=============================================================================
@@ -439,7 +452,7 @@ absl_flags_program_name: cmake_check_build_system
 
 # fast build rule for target.
 absl_flags_program_name/fast:
-	$(MAKE) -f abseil-cpp/absl/flags/CMakeFiles/absl_flags_program_name.dir/build.make abseil-cpp/absl/flags/CMakeFiles/absl_flags_program_name.dir/build
+	$(MAKE) -f thirdparty/abseil-cpp/absl/flags/CMakeFiles/absl_flags_program_name.dir/build.make thirdparty/abseil-cpp/absl/flags/CMakeFiles/absl_flags_program_name.dir/build
 .PHONY : absl_flags_program_name/fast
 
 #=============================================================================
@@ -452,7 +465,7 @@ absl_flags_reflection: cmake_check_build_system
 
 # fast build rule for target.
 absl_flags_reflection/fast:
-	$(MAKE) -f abseil-cpp/absl/flags/CMakeFiles/absl_flags_reflection.dir/build.make abseil-cpp/absl/flags/CMakeFiles/absl_flags_reflection.dir/build
+	$(MAKE) -f thirdparty/abseil-cpp/absl/flags/CMakeFiles/absl_flags_reflection.dir/build.make thirdparty/abseil-cpp/absl/flags/CMakeFiles/absl_flags_reflection.dir/build
 .PHONY : absl_flags_reflection/fast
 
 #=============================================================================
@@ -465,7 +478,7 @@ absl_flags_config: cmake_check_build_system
 
 # fast build rule for target.
 absl_flags_config/fast:
-	$(MAKE) -f abseil-cpp/absl/flags/CMakeFiles/absl_flags_config.dir/build.make abseil-cpp/absl/flags/CMakeFiles/absl_flags_config.dir/build
+	$(MAKE) -f thirdparty/abseil-cpp/absl/flags/CMakeFiles/absl_flags_config.dir/build.make thirdparty/abseil-cpp/absl/flags/CMakeFiles/absl_flags_config.dir/build
 .PHONY : absl_flags_config/fast
 
 #=============================================================================
@@ -478,7 +491,7 @@ absl_flags_private_handle_accessor: cmake_check_build_system
 
 # fast build rule for target.
 absl_flags_private_handle_accessor/fast:
-	$(MAKE) -f abseil-cpp/absl/flags/CMakeFiles/absl_flags_private_handle_accessor.dir/build.make abseil-cpp/absl/flags/CMakeFiles/absl_flags_private_handle_accessor.dir/build
+	$(MAKE) -f thirdparty/abseil-cpp/absl/flags/CMakeFiles/absl_flags_private_handle_accessor.dir/build.make thirdparty/abseil-cpp/absl/flags/CMakeFiles/absl_flags_private_handle_accessor.dir/build
 .PHONY : absl_flags_private_handle_accessor/fast
 
 #=============================================================================
@@ -491,7 +504,7 @@ absl_flags_marshalling: cmake_check_build_system
 
 # fast build rule for target.
 absl_flags_marshalling/fast:
-	$(MAKE) -f abseil-cpp/absl/flags/CMakeFiles/absl_flags_marshalling.dir/build.make abseil-cpp/absl/flags/CMakeFiles/absl_flags_marshalling.dir/build
+	$(MAKE) -f thirdparty/abseil-cpp/absl/flags/CMakeFiles/absl_flags_marshalling.dir/build.make thirdparty/abseil-cpp/absl/flags/CMakeFiles/absl_flags_marshalling.dir/build
 .PHONY : absl_flags_marshalling/fast
 
 #=============================================================================
@@ -504,7 +517,7 @@ absl_flags: cmake_check_build_system
 
 # fast build rule for target.
 absl_flags/fast:
-	$(MAKE) -f abseil-cpp/absl/flags/CMakeFiles/absl_flags.dir/build.make abseil-cpp/absl/flags/CMakeFiles/absl_flags.dir/build
+	$(MAKE) -f thirdparty/abseil-cpp/absl/flags/CMakeFiles/absl_flags.dir/build.make thirdparty/abseil-cpp/absl/flags/CMakeFiles/absl_flags.dir/build
 .PHONY : absl_flags/fast
 
 #=============================================================================
@@ -517,7 +530,7 @@ absl_flags_commandlineflag_internal: cmake_check_build_system
 
 # fast build rule for target.
 absl_flags_commandlineflag_internal/fast:
-	$(MAKE) -f abseil-cpp/absl/flags/CMakeFiles/absl_flags_commandlineflag_internal.dir/build.make abseil-cpp/absl/flags/CMakeFiles/absl_flags_commandlineflag_internal.dir/build
+	$(MAKE) -f thirdparty/abseil-cpp/absl/flags/CMakeFiles/absl_flags_commandlineflag_internal.dir/build.make thirdparty/abseil-cpp/absl/flags/CMakeFiles/absl_flags_commandlineflag_internal.dir/build
 .PHONY : absl_flags_commandlineflag_internal/fast
 
 #=============================================================================
@@ -530,7 +543,7 @@ absl_flags_commandlineflag: cmake_check_build_system
 
 # fast build rule for target.
 absl_flags_commandlineflag/fast:
-	$(MAKE) -f abseil-cpp/absl/flags/CMakeFiles/absl_flags_commandlineflag.dir/build.make abseil-cpp/absl/flags/CMakeFiles/absl_flags_commandlineflag.dir/build
+	$(MAKE) -f thirdparty/abseil-cpp/absl/flags/CMakeFiles/absl_flags_commandlineflag.dir/build.make thirdparty/abseil-cpp/absl/flags/CMakeFiles/absl_flags_commandlineflag.dir/build
 .PHONY : absl_flags_commandlineflag/fast
 
 #=============================================================================
@@ -543,7 +556,7 @@ absl_flags_internal: cmake_check_build_system
 
 # fast build rule for target.
 absl_flags_internal/fast:
-	$(MAKE) -f abseil-cpp/absl/flags/CMakeFiles/absl_flags_internal.dir/build.make abseil-cpp/absl/flags/CMakeFiles/absl_flags_internal.dir/build
+	$(MAKE) -f thirdparty/abseil-cpp/absl/flags/CMakeFiles/absl_flags_internal.dir/build.make thirdparty/abseil-cpp/absl/flags/CMakeFiles/absl_flags_internal.dir/build
 .PHONY : absl_flags_internal/fast
 
 #=============================================================================
@@ -556,7 +569,7 @@ absl_flags_parse: cmake_check_build_system
 
 # fast build rule for target.
 absl_flags_parse/fast:
-	$(MAKE) -f abseil-cpp/absl/flags/CMakeFiles/absl_flags_parse.dir/build.make abseil-cpp/absl/flags/CMakeFiles/absl_flags_parse.dir/build
+	$(MAKE) -f thirdparty/abseil-cpp/absl/flags/CMakeFiles/absl_flags_parse.dir/build.make thirdparty/abseil-cpp/absl/flags/CMakeFiles/absl_flags_parse.dir/build
 .PHONY : absl_flags_parse/fast
 
 #=============================================================================
@@ -569,7 +582,7 @@ absl_flags_usage_internal: cmake_check_build_system
 
 # fast build rule for target.
 absl_flags_usage_internal/fast:
-	$(MAKE) -f abseil-cpp/absl/flags/CMakeFiles/absl_flags_usage_internal.dir/build.make abseil-cpp/absl/flags/CMakeFiles/absl_flags_usage_internal.dir/build
+	$(MAKE) -f thirdparty/abseil-cpp/absl/flags/CMakeFiles/absl_flags_usage_internal.dir/build.make thirdparty/abseil-cpp/absl/flags/CMakeFiles/absl_flags_usage_internal.dir/build
 .PHONY : absl_flags_usage_internal/fast
 
 #=============================================================================
@@ -582,7 +595,7 @@ absl_flags_usage: cmake_check_build_system
 
 # fast build rule for target.
 absl_flags_usage/fast:
-	$(MAKE) -f abseil-cpp/absl/flags/CMakeFiles/absl_flags_usage.dir/build.make abseil-cpp/absl/flags/CMakeFiles/absl_flags_usage.dir/build
+	$(MAKE) -f thirdparty/abseil-cpp/absl/flags/CMakeFiles/absl_flags_usage.dir/build.make thirdparty/abseil-cpp/absl/flags/CMakeFiles/absl_flags_usage.dir/build
 .PHONY : absl_flags_usage/fast
 
 #=============================================================================
@@ -595,7 +608,7 @@ absl_city: cmake_check_build_system
 
 # fast build rule for target.
 absl_city/fast:
-	$(MAKE) -f abseil-cpp/absl/hash/CMakeFiles/absl_city.dir/build.make abseil-cpp/absl/hash/CMakeFiles/absl_city.dir/build
+	$(MAKE) -f thirdparty/abseil-cpp/absl/hash/CMakeFiles/absl_city.dir/build.make thirdparty/abseil-cpp/absl/hash/CMakeFiles/absl_city.dir/build
 .PHONY : absl_city/fast
 
 #=============================================================================
@@ -608,7 +621,7 @@ absl_hash: cmake_check_build_system
 
 # fast build rule for target.
 absl_hash/fast:
-	$(MAKE) -f abseil-cpp/absl/hash/CMakeFiles/absl_hash.dir/build.make abseil-cpp/absl/hash/CMakeFiles/absl_hash.dir/build
+	$(MAKE) -f thirdparty/abseil-cpp/absl/hash/CMakeFiles/absl_hash.dir/build.make thirdparty/abseil-cpp/absl/hash/CMakeFiles/absl_hash.dir/build
 .PHONY : absl_hash/fast
 
 #=============================================================================
@@ -621,7 +634,7 @@ absl_int128: cmake_check_build_system
 
 # fast build rule for target.
 absl_int128/fast:
-	$(MAKE) -f abseil-cpp/absl/numeric/CMakeFiles/absl_int128.dir/build.make abseil-cpp/absl/numeric/CMakeFiles/absl_int128.dir/build
+	$(MAKE) -f thirdparty/abseil-cpp/absl/numeric/CMakeFiles/absl_int128.dir/build.make thirdparty/abseil-cpp/absl/numeric/CMakeFiles/absl_int128.dir/build
 .PHONY : absl_int128/fast
 
 #=============================================================================
@@ -634,7 +647,7 @@ absl_random_internal_pool_urbg: cmake_check_build_system
 
 # fast build rule for target.
 absl_random_internal_pool_urbg/fast:
-	$(MAKE) -f abseil-cpp/absl/random/CMakeFiles/absl_random_internal_pool_urbg.dir/build.make abseil-cpp/absl/random/CMakeFiles/absl_random_internal_pool_urbg.dir/build
+	$(MAKE) -f thirdparty/abseil-cpp/absl/random/CMakeFiles/absl_random_internal_pool_urbg.dir/build.make thirdparty/abseil-cpp/absl/random/CMakeFiles/absl_random_internal_pool_urbg.dir/build
 .PHONY : absl_random_internal_pool_urbg/fast
 
 #=============================================================================
@@ -647,7 +660,7 @@ absl_random_distributions: cmake_check_build_system
 
 # fast build rule for target.
 absl_random_distributions/fast:
-	$(MAKE) -f abseil-cpp/absl/random/CMakeFiles/absl_random_distributions.dir/build.make abseil-cpp/absl/random/CMakeFiles/absl_random_distributions.dir/build
+	$(MAKE) -f thirdparty/abseil-cpp/absl/random/CMakeFiles/absl_random_distributions.dir/build.make thirdparty/abseil-cpp/absl/random/CMakeFiles/absl_random_distributions.dir/build
 .PHONY : absl_random_distributions/fast
 
 #=============================================================================
@@ -660,7 +673,7 @@ absl_random_seed_gen_exception: cmake_check_build_system
 
 # fast build rule for target.
 absl_random_seed_gen_exception/fast:
-	$(MAKE) -f abseil-cpp/absl/random/CMakeFiles/absl_random_seed_gen_exception.dir/build.make abseil-cpp/absl/random/CMakeFiles/absl_random_seed_gen_exception.dir/build
+	$(MAKE) -f thirdparty/abseil-cpp/absl/random/CMakeFiles/absl_random_seed_gen_exception.dir/build.make thirdparty/abseil-cpp/absl/random/CMakeFiles/absl_random_seed_gen_exception.dir/build
 .PHONY : absl_random_seed_gen_exception/fast
 
 #=============================================================================
@@ -673,7 +686,7 @@ absl_random_seed_sequences: cmake_check_build_system
 
 # fast build rule for target.
 absl_random_seed_sequences/fast:
-	$(MAKE) -f abseil-cpp/absl/random/CMakeFiles/absl_random_seed_sequences.dir/build.make abseil-cpp/absl/random/CMakeFiles/absl_random_seed_sequences.dir/build
+	$(MAKE) -f thirdparty/abseil-cpp/absl/random/CMakeFiles/absl_random_seed_sequences.dir/build.make thirdparty/abseil-cpp/absl/random/CMakeFiles/absl_random_seed_sequences.dir/build
 .PHONY : absl_random_seed_sequences/fast
 
 #=============================================================================
@@ -686,7 +699,7 @@ absl_random_internal_distribution_test_util: cmake_check_build_system
 
 # fast build rule for target.
 absl_random_internal_distribution_test_util/fast:
-	$(MAKE) -f abseil-cpp/absl/random/CMakeFiles/absl_random_internal_distribution_test_util.dir/build.make abseil-cpp/absl/random/CMakeFiles/absl_random_internal_distribution_test_util.dir/build
+	$(MAKE) -f thirdparty/abseil-cpp/absl/random/CMakeFiles/absl_random_internal_distribution_test_util.dir/build.make thirdparty/abseil-cpp/absl/random/CMakeFiles/absl_random_internal_distribution_test_util.dir/build
 .PHONY : absl_random_internal_distribution_test_util/fast
 
 #=============================================================================
@@ -699,7 +712,7 @@ absl_random_internal_seed_material: cmake_check_build_system
 
 # fast build rule for target.
 absl_random_internal_seed_material/fast:
-	$(MAKE) -f abseil-cpp/absl/random/CMakeFiles/absl_random_internal_seed_material.dir/build.make abseil-cpp/absl/random/CMakeFiles/absl_random_internal_seed_material.dir/build
+	$(MAKE) -f thirdparty/abseil-cpp/absl/random/CMakeFiles/absl_random_internal_seed_material.dir/build.make thirdparty/abseil-cpp/absl/random/CMakeFiles/absl_random_internal_seed_material.dir/build
 .PHONY : absl_random_internal_seed_material/fast
 
 #=============================================================================
@@ -712,7 +725,7 @@ absl_random_internal_randen_slow: cmake_check_build_system
 
 # fast build rule for target.
 absl_random_internal_randen_slow/fast:
-	$(MAKE) -f abseil-cpp/absl/random/CMakeFiles/absl_random_internal_randen_slow.dir/build.make abseil-cpp/absl/random/CMakeFiles/absl_random_internal_randen_slow.dir/build
+	$(MAKE) -f thirdparty/abseil-cpp/absl/random/CMakeFiles/absl_random_internal_randen_slow.dir/build.make thirdparty/abseil-cpp/absl/random/CMakeFiles/absl_random_internal_randen_slow.dir/build
 .PHONY : absl_random_internal_randen_slow/fast
 
 #=============================================================================
@@ -725,7 +738,7 @@ absl_random_internal_platform: cmake_check_build_system
 
 # fast build rule for target.
 absl_random_internal_platform/fast:
-	$(MAKE) -f abseil-cpp/absl/random/CMakeFiles/absl_random_internal_platform.dir/build.make abseil-cpp/absl/random/CMakeFiles/absl_random_internal_platform.dir/build
+	$(MAKE) -f thirdparty/abseil-cpp/absl/random/CMakeFiles/absl_random_internal_platform.dir/build.make thirdparty/abseil-cpp/absl/random/CMakeFiles/absl_random_internal_platform.dir/build
 .PHONY : absl_random_internal_platform/fast
 
 #=============================================================================
@@ -738,7 +751,7 @@ absl_random_internal_randen: cmake_check_build_system
 
 # fast build rule for target.
 absl_random_internal_randen/fast:
-	$(MAKE) -f abseil-cpp/absl/random/CMakeFiles/absl_random_internal_randen.dir/build.make abseil-cpp/absl/random/CMakeFiles/absl_random_internal_randen.dir/build
+	$(MAKE) -f thirdparty/abseil-cpp/absl/random/CMakeFiles/absl_random_internal_randen.dir/build.make thirdparty/abseil-cpp/absl/random/CMakeFiles/absl_random_internal_randen.dir/build
 .PHONY : absl_random_internal_randen/fast
 
 #=============================================================================
@@ -751,7 +764,7 @@ absl_random_internal_randen_hwaes: cmake_check_build_system
 
 # fast build rule for target.
 absl_random_internal_randen_hwaes/fast:
-	$(MAKE) -f abseil-cpp/absl/random/CMakeFiles/absl_random_internal_randen_hwaes.dir/build.make abseil-cpp/absl/random/CMakeFiles/absl_random_internal_randen_hwaes.dir/build
+	$(MAKE) -f thirdparty/abseil-cpp/absl/random/CMakeFiles/absl_random_internal_randen_hwaes.dir/build.make thirdparty/abseil-cpp/absl/random/CMakeFiles/absl_random_internal_randen_hwaes.dir/build
 .PHONY : absl_random_internal_randen_hwaes/fast
 
 #=============================================================================
@@ -764,7 +777,7 @@ absl_random_internal_randen_hwaes_impl: cmake_check_build_system
 
 # fast build rule for target.
 absl_random_internal_randen_hwaes_impl/fast:
-	$(MAKE) -f abseil-cpp/absl/random/CMakeFiles/absl_random_internal_randen_hwaes_impl.dir/build.make abseil-cpp/absl/random/CMakeFiles/absl_random_internal_randen_hwaes_impl.dir/build
+	$(MAKE) -f thirdparty/abseil-cpp/absl/random/CMakeFiles/absl_random_internal_randen_hwaes_impl.dir/build.make thirdparty/abseil-cpp/absl/random/CMakeFiles/absl_random_internal_randen_hwaes_impl.dir/build
 .PHONY : absl_random_internal_randen_hwaes_impl/fast
 
 #=============================================================================
@@ -777,7 +790,7 @@ absl_statusor: cmake_check_build_system
 
 # fast build rule for target.
 absl_statusor/fast:
-	$(MAKE) -f abseil-cpp/absl/status/CMakeFiles/absl_statusor.dir/build.make abseil-cpp/absl/status/CMakeFiles/absl_statusor.dir/build
+	$(MAKE) -f thirdparty/abseil-cpp/absl/status/CMakeFiles/absl_statusor.dir/build.make thirdparty/abseil-cpp/absl/status/CMakeFiles/absl_statusor.dir/build
 .PHONY : absl_statusor/fast
 
 #=============================================================================
@@ -790,7 +803,7 @@ absl_status: cmake_check_build_system
 
 # fast build rule for target.
 absl_status/fast:
-	$(MAKE) -f abseil-cpp/absl/status/CMakeFiles/absl_status.dir/build.make abseil-cpp/absl/status/CMakeFiles/absl_status.dir/build
+	$(MAKE) -f thirdparty/abseil-cpp/absl/status/CMakeFiles/absl_status.dir/build.make thirdparty/abseil-cpp/absl/status/CMakeFiles/absl_status.dir/build
 .PHONY : absl_status/fast
 
 #=============================================================================
@@ -803,7 +816,7 @@ absl_str_format_internal: cmake_check_build_system
 
 # fast build rule for target.
 absl_str_format_internal/fast:
-	$(MAKE) -f abseil-cpp/absl/strings/CMakeFiles/absl_str_format_internal.dir/build.make abseil-cpp/absl/strings/CMakeFiles/absl_str_format_internal.dir/build
+	$(MAKE) -f thirdparty/abseil-cpp/absl/strings/CMakeFiles/absl_str_format_internal.dir/build.make thirdparty/abseil-cpp/absl/strings/CMakeFiles/absl_str_format_internal.dir/build
 .PHONY : absl_str_format_internal/fast
 
 #=============================================================================
@@ -816,7 +829,7 @@ absl_strings_internal: cmake_check_build_system
 
 # fast build rule for target.
 absl_strings_internal/fast:
-	$(MAKE) -f abseil-cpp/absl/strings/CMakeFiles/absl_strings_internal.dir/build.make abseil-cpp/absl/strings/CMakeFiles/absl_strings_internal.dir/build
+	$(MAKE) -f thirdparty/abseil-cpp/absl/strings/CMakeFiles/absl_strings_internal.dir/build.make thirdparty/abseil-cpp/absl/strings/CMakeFiles/absl_strings_internal.dir/build
 .PHONY : absl_strings_internal/fast
 
 #=============================================================================
@@ -829,7 +842,7 @@ absl_cord: cmake_check_build_system
 
 # fast build rule for target.
 absl_cord/fast:
-	$(MAKE) -f abseil-cpp/absl/strings/CMakeFiles/absl_cord.dir/build.make abseil-cpp/absl/strings/CMakeFiles/absl_cord.dir/build
+	$(MAKE) -f thirdparty/abseil-cpp/absl/strings/CMakeFiles/absl_cord.dir/build.make thirdparty/abseil-cpp/absl/strings/CMakeFiles/absl_cord.dir/build
 .PHONY : absl_cord/fast
 
 #=============================================================================
@@ -842,7 +855,7 @@ absl_strings: cmake_check_build_system
 
 # fast build rule for target.
 absl_strings/fast:
-	$(MAKE) -f abseil-cpp/absl/strings/CMakeFiles/absl_strings.dir/build.make abseil-cpp/absl/strings/CMakeFiles/absl_strings.dir/build
+	$(MAKE) -f thirdparty/abseil-cpp/absl/strings/CMakeFiles/absl_strings.dir/build.make thirdparty/abseil-cpp/absl/strings/CMakeFiles/absl_strings.dir/build
 .PHONY : absl_strings/fast
 
 #=============================================================================
@@ -855,7 +868,7 @@ absl_synchronization: cmake_check_build_system
 
 # fast build rule for target.
 absl_synchronization/fast:
-	$(MAKE) -f abseil-cpp/absl/synchronization/CMakeFiles/absl_synchronization.dir/build.make abseil-cpp/absl/synchronization/CMakeFiles/absl_synchronization.dir/build
+	$(MAKE) -f thirdparty/abseil-cpp/absl/synchronization/CMakeFiles/absl_synchronization.dir/build.make thirdparty/abseil-cpp/absl/synchronization/CMakeFiles/absl_synchronization.dir/build
 .PHONY : absl_synchronization/fast
 
 #=============================================================================
@@ -868,7 +881,7 @@ absl_graphcycles_internal: cmake_check_build_system
 
 # fast build rule for target.
 absl_graphcycles_internal/fast:
-	$(MAKE) -f abseil-cpp/absl/synchronization/CMakeFiles/absl_graphcycles_internal.dir/build.make abseil-cpp/absl/synchronization/CMakeFiles/absl_graphcycles_internal.dir/build
+	$(MAKE) -f thirdparty/abseil-cpp/absl/synchronization/CMakeFiles/absl_graphcycles_internal.dir/build.make thirdparty/abseil-cpp/absl/synchronization/CMakeFiles/absl_graphcycles_internal.dir/build
 .PHONY : absl_graphcycles_internal/fast
 
 #=============================================================================
@@ -881,7 +894,7 @@ absl_time_zone: cmake_check_build_system
 
 # fast build rule for target.
 absl_time_zone/fast:
-	$(MAKE) -f abseil-cpp/absl/time/CMakeFiles/absl_time_zone.dir/build.make abseil-cpp/absl/time/CMakeFiles/absl_time_zone.dir/build
+	$(MAKE) -f thirdparty/abseil-cpp/absl/time/CMakeFiles/absl_time_zone.dir/build.make thirdparty/abseil-cpp/absl/time/CMakeFiles/absl_time_zone.dir/build
 .PHONY : absl_time_zone/fast
 
 #=============================================================================
@@ -894,7 +907,7 @@ absl_civil_time: cmake_check_build_system
 
 # fast build rule for target.
 absl_civil_time/fast:
-	$(MAKE) -f abseil-cpp/absl/time/CMakeFiles/absl_civil_time.dir/build.make abseil-cpp/absl/time/CMakeFiles/absl_civil_time.dir/build
+	$(MAKE) -f thirdparty/abseil-cpp/absl/time/CMakeFiles/absl_civil_time.dir/build.make thirdparty/abseil-cpp/absl/time/CMakeFiles/absl_civil_time.dir/build
 .PHONY : absl_civil_time/fast
 
 #=============================================================================
@@ -907,7 +920,7 @@ absl_time: cmake_check_build_system
 
 # fast build rule for target.
 absl_time/fast:
-	$(MAKE) -f abseil-cpp/absl/time/CMakeFiles/absl_time.dir/build.make abseil-cpp/absl/time/CMakeFiles/absl_time.dir/build
+	$(MAKE) -f thirdparty/abseil-cpp/absl/time/CMakeFiles/absl_time.dir/build.make thirdparty/abseil-cpp/absl/time/CMakeFiles/absl_time.dir/build
 .PHONY : absl_time/fast
 
 #=============================================================================
@@ -920,7 +933,7 @@ absl_bad_any_cast_impl: cmake_check_build_system
 
 # fast build rule for target.
 absl_bad_any_cast_impl/fast:
-	$(MAKE) -f abseil-cpp/absl/types/CMakeFiles/absl_bad_any_cast_impl.dir/build.make abseil-cpp/absl/types/CMakeFiles/absl_bad_any_cast_impl.dir/build
+	$(MAKE) -f thirdparty/abseil-cpp/absl/types/CMakeFiles/absl_bad_any_cast_impl.dir/build.make thirdparty/abseil-cpp/absl/types/CMakeFiles/absl_bad_any_cast_impl.dir/build
 .PHONY : absl_bad_any_cast_impl/fast
 
 #=============================================================================
@@ -933,7 +946,7 @@ absl_bad_optional_access: cmake_check_build_system
 
 # fast build rule for target.
 absl_bad_optional_access/fast:
-	$(MAKE) -f abseil-cpp/absl/types/CMakeFiles/absl_bad_optional_access.dir/build.make abseil-cpp/absl/types/CMakeFiles/absl_bad_optional_access.dir/build
+	$(MAKE) -f thirdparty/abseil-cpp/absl/types/CMakeFiles/absl_bad_optional_access.dir/build.make thirdparty/abseil-cpp/absl/types/CMakeFiles/absl_bad_optional_access.dir/build
 .PHONY : absl_bad_optional_access/fast
 
 #=============================================================================
@@ -946,7 +959,7 @@ absl_bad_variant_access: cmake_check_build_system
 
 # fast build rule for target.
 absl_bad_variant_access/fast:
-	$(MAKE) -f abseil-cpp/absl/types/CMakeFiles/absl_bad_variant_access.dir/build.make abseil-cpp/absl/types/CMakeFiles/absl_bad_variant_access.dir/build
+	$(MAKE) -f thirdparty/abseil-cpp/absl/types/CMakeFiles/absl_bad_variant_access.dir/build.make thirdparty/abseil-cpp/absl/types/CMakeFiles/absl_bad_variant_access.dir/build
 .PHONY : absl_bad_variant_access/fast
 
 #=============================================================================
@@ -959,62 +972,8 @@ mdns_example: cmake_check_build_system
 
 # fast build rule for target.
 mdns_example/fast:
-	$(MAKE) -f mdns/CMakeFiles/mdns_example.dir/build.make mdns/CMakeFiles/mdns_example.dir/build
+	$(MAKE) -f thirdparty/mdns/CMakeFiles/mdns_example.dir/build.make thirdparty/mdns/CMakeFiles/mdns_example.dir/build
 .PHONY : mdns_example/fast
-
-NetworkController.o: NetworkController.cpp.o
-
-.PHONY : NetworkController.o
-
-# target to build an object file
-NetworkController.cpp.o:
-	$(MAKE) -f CMakeFiles/mdns-controller.dir/build.make CMakeFiles/mdns-controller.dir/NetworkController.cpp.o
-.PHONY : NetworkController.cpp.o
-
-NetworkController.i: NetworkController.cpp.i
-
-.PHONY : NetworkController.i
-
-# target to preprocess a source file
-NetworkController.cpp.i:
-	$(MAKE) -f CMakeFiles/mdns-controller.dir/build.make CMakeFiles/mdns-controller.dir/NetworkController.cpp.i
-.PHONY : NetworkController.cpp.i
-
-NetworkController.s: NetworkController.cpp.s
-
-.PHONY : NetworkController.s
-
-# target to generate assembly for a file
-NetworkController.cpp.s:
-	$(MAKE) -f CMakeFiles/mdns-controller.dir/build.make CMakeFiles/mdns-controller.dir/NetworkController.cpp.s
-.PHONY : NetworkController.cpp.s
-
-main.o: main.cpp.o
-
-.PHONY : main.o
-
-# target to build an object file
-main.cpp.o:
-	$(MAKE) -f CMakeFiles/mdns-controller.dir/build.make CMakeFiles/mdns-controller.dir/main.cpp.o
-.PHONY : main.cpp.o
-
-main.i: main.cpp.i
-
-.PHONY : main.i
-
-# target to preprocess a source file
-main.cpp.i:
-	$(MAKE) -f CMakeFiles/mdns-controller.dir/build.make CMakeFiles/mdns-controller.dir/main.cpp.i
-.PHONY : main.cpp.i
-
-main.s: main.cpp.s
-
-.PHONY : main.s
-
-# target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) -f CMakeFiles/mdns-controller.dir/build.make CMakeFiles/mdns-controller.dir/main.cpp.s
-.PHONY : main.cpp.s
 
 # Help Target
 help:
@@ -1029,6 +988,7 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... mdns-controller"
+	@echo "... NetworkController"
 	@echo "... absl_exponential_biased"
 	@echo "... absl_strerror"
 	@echo "... absl_spinlock_wait"
@@ -1090,12 +1050,6 @@ help:
 	@echo "... absl_bad_optional_access"
 	@echo "... absl_bad_variant_access"
 	@echo "... mdns_example"
-	@echo "... NetworkController.o"
-	@echo "... NetworkController.i"
-	@echo "... NetworkController.s"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
 .PHONY : help
 
 
