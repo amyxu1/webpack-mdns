@@ -16,8 +16,8 @@ set(EXTRA_LIBS ${EXTRA_LIBS} absl::memory)
 set(EXTRA_LIBS ${EXTRA_LIBS} absl::raw_hash_map)
 
 
-set(GCC_COVERAGE_LINK_FLAGS "-lgrpc++_reflection")
-SET(CMAKE_EXE_LINKER_FLAGS  "${CMAKE_EXE_LINKER_FLAGS} ${GCC_COVERAGE_LINK_FLAGS}")
+#set(GCC_COVERAGE_LINK_FLAGS "-lgrpc++_reflection")
+#SET(CMAKE_EXE_LINKER_FLAGS  "${CMAKE_EXE_LINKER_FLAGS} ${GCC_COVERAGE_LINK_FLAGS}")
 
 # Project
 add_subdirectory(network_controller)

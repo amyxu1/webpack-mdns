@@ -8,8 +8,8 @@
 #include <sys/socket.h>
 #include <thread>
 #include "../include/NetworkController/NetworkController.hpp"
-#include "../../file_trans/include/file_trans.pb.h"
-#include "../../file_trans/include/file_trans.grpc.pb.h"
+//#include "../../file_trans/include/file_trans.pb.h"
+//#include "../../file_trans/include/file_trans.grpc.pb.h"
 
 NetworkController::NetworkController()
 {
@@ -74,13 +74,15 @@ void NetworkController::listen(mdns_record_callback_fn callback)
 void NetworkController::run_server()
 {
   std::string server_address = "127.0.0.1:50051";
-  WebpackServerImpl service();
+  system("./server " + server_address); // TODO: move copy to mdns-cntroller dir
+  /*WebpackServerImpl service();
   ServerBuilder builder;
   builder.AddListeningPort(server_address, grpc::InsecureServerCredentials());
   builder.RegisterService(&service);
   std::unique_ptr<Server> server(builder.BuildAndStart());
   std::cout << "Server listening on " << server_address << std::endl;
   server->Wait();
+  */
 }
 
 void NetworkController::query(std::string service, mdns_record_callback_fn callback)
@@ -159,8 +161,8 @@ int NetworkController::query_callback(int sock, const struct sockaddr* from,
     }
     (*m_urlTable)[entrystr].insert(from_addr_str);
 
-    //std::string filename = "";
-    //get_file(filename, ip_addr);
+    std::string filename = entrystr; // TODO: Add wrapper get_filename fn
+    get_file(filename, from_addr_str);
 
   // SRV: info about a service. in this case, we treat a webpack as a service.
   } else if (rtype == MDNS_RECORDTYPE_SRV) {
@@ -263,9 +265,10 @@ NetworkController::service_callback(int sock, const struct sockaddr* from,
 
 void NetworkController::get_file(std::string server_address, std::string filename)
 {
-  WebpackServerClient client(grpc::CreateChannel(server_address, 
+  system("./client " + server_address + " " + filename);
+  /*WebpackServerClient client(grpc::CreateChannel(server_address, 
 			     grpc::InsecureServerCredentials()));
-  client.SendFile(filename);
+  client.SendFile(filename);*/
 }
 
 std::string
