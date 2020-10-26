@@ -13,13 +13,11 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "thirdparty/mdns"
   "src/network_controller/include"
   "thirdparty/abseil-cpp"
-  "src/file_trans/include"
   )
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
   "/root/webpack-mdns/src/network_controller/CMakeFiles/NetworkController.dir/DependInfo.cmake"
-  "/root/webpack-mdns/src/file_trans/CMakeFiles/WebpackServer.dir/DependInfo.cmake"
   "/root/webpack-mdns/thirdparty/abseil-cpp/absl/hash/CMakeFiles/absl_hash.dir/DependInfo.cmake"
   "/root/webpack-mdns/thirdparty/abseil-cpp/absl/container/CMakeFiles/absl_hashtablez_sampler.dir/DependInfo.cmake"
   "/root/webpack-mdns/thirdparty/abseil-cpp/absl/types/CMakeFiles/absl_bad_variant_access.dir/DependInfo.cmake"

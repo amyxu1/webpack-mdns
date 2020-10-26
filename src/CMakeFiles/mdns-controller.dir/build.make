@@ -80,7 +80,6 @@ mdns__controller_EXTERNAL_OBJECTS =
 src/mdns-controller: src/CMakeFiles/mdns-controller.dir/binary/main.cpp.o
 src/mdns-controller: src/CMakeFiles/mdns-controller.dir/build.make
 src/mdns-controller: src/network_controller/libNetworkController.a
-src/mdns-controller: src/file_trans/libWebpackServer.a
 src/mdns-controller: thirdparty/abseil-cpp/absl/hash/libabsl_hash.a
 src/mdns-controller: thirdparty/abseil-cpp/absl/container/libabsl_hashtablez_sampler.a
 src/mdns-controller: thirdparty/abseil-cpp/absl/hash/libabsl_hash.a

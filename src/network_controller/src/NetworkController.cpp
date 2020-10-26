@@ -74,7 +74,8 @@ void NetworkController::listen(mdns_record_callback_fn callback)
 void NetworkController::run_server()
 {
   std::string server_address = "127.0.0.1:50051";
-  system("./server " + server_address); // TODO: move copy to mdns-cntroller dir
+  std::string command = "./server " + server_address;
+  system(command.c_str()); // TODO: move copy to mdns-cntroller dir
   /*WebpackServerImpl service();
   ServerBuilder builder;
   builder.AddListeningPort(server_address, grpc::InsecureServerCredentials());
@@ -265,7 +266,8 @@ NetworkController::service_callback(int sock, const struct sockaddr* from,
 
 void NetworkController::get_file(std::string server_address, std::string filename)
 {
-  system("./client " + server_address + " " + filename);
+  std::string command = "./client " + server_address + " " + filename;
+  system(command.c_str());
   /*WebpackServerClient client(grpc::CreateChannel(server_address, 
 			     grpc::InsecureServerCredentials()));
   client.SendFile(filename);*/

@@ -6,5 +6,5 @@ CXX_FLAGS = -O3 -DNDEBUG -fPIE   -std=gnu++11
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/root/webpack-mdns/thirdparty/mdns -I/root/webpack-mdns/src/network_controller/include -I/root/webpack-mdns/thirdparty/abseil-cpp -I/root/webpack-mdns/src/file_trans/include 
+CXX_INCLUDES = -I/root/webpack-mdns/thirdparty/mdns -I/root/webpack-mdns/src/network_controller/include -I/root/webpack-mdns/thirdparty/abseil-cpp 
 

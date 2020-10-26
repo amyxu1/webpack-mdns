@@ -46,7 +46,7 @@ int main(int argc, char** argv)
 {
   WebpackServerImpl webpack;
   ServerBuilder builder;
-  std::string server_address = "127.0.0.1:50051";
+  std::string server_address = argv[1]/*"127.0.0.1:50051"*/;
   WebpackServerImpl service;
   builder.AddListeningPort(server_address, grpc::InsecureServerCredentials());
   builder.RegisterService(&service);

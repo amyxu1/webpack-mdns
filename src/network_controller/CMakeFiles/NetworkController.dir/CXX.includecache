@@ -6,44 +6,6 @@
 
 #IncludeRegexTransform: 
 
-/root/webpack-mdns/src/file_trans/include/file_trans.pb.h
-limits
--
-string
--
-google/protobuf/port_def.inc
--
-google/protobuf/port_undef.inc
--
-google/protobuf/io/coded_stream.h
--
-google/protobuf/arena.h
--
-google/protobuf/arenastring.h
--
-google/protobuf/generated_message_table_driven.h
--
-google/protobuf/generated_message_util.h
--
-google/protobuf/inlined_string_field.h
--
-google/protobuf/metadata_lite.h
--
-google/protobuf/generated_message_reflection.h
--
-google/protobuf/message.h
--
-google/protobuf/repeated_field.h
--
-google/protobuf/extension_set.h
--
-google/protobuf/unknown_field_set.h
--
-google/protobuf/port_def.inc
--
-google/protobuf/port_undef.inc
--
-
 /root/webpack-mdns/src/network_controller/include/NetworkController/NetworkController.hpp
 absl/container/flat_hash_map.h
 -
@@ -73,8 +35,6 @@ thread
 -
 ../include/NetworkController/NetworkController.hpp
 /root/webpack-mdns/src/network_controller/include/NetworkController/NetworkController.hpp
-../../file_trans/include/file_trans.pb.h
-/root/webpack-mdns/src/file_trans/include/file_trans.pb.h
 
 /root/webpack-mdns/thirdparty/mdns/mdns.h
 stdint.h

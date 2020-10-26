@@ -32,7 +32,7 @@ public:
     request.set_filename(filename);
     std::unique_ptr<ClientReader<FileChunk>> reader(stub_->SendFile(&context, request));
     std::ofstream ofs;
-    ofs.open(filename/*debug +"x"*/, std::ios::out|std::ios::binary);
+    ofs.open(filename+"x"/*debug +"x"*/, std::ios::out|std::ios::binary);
 
     while (reader->Read(&fileChunk))
     {
@@ -48,8 +48,9 @@ private:
 
 int main(int argc, char** argv) 
 {
-  std::string server_address = "127.0.0.1:50051";
-  std::string filename = "a.txt";
+  // TODO: Add argc checking
+  std::string server_address = argv[1]/*"127.0.0.1:51005"*/;
+  std::string filename = argv[2]/*"a.txt"*/;
   WebpackServerClient client(grpc::CreateChannel(server_address, 
             		     grpc::InsecureChannelCredentials()));
   client.SendFile(filename);
