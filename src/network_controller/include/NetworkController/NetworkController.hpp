@@ -24,6 +24,11 @@ public:
    */
   void listen(mdns_record_callback_fn callback);
 
+  /**
+   *  run server
+   */
+  void run_server();
+
   /** 
    *  send a query
    */ 
@@ -59,6 +64,11 @@ private:
   void setup_ipv4();
 
   /**
+   *  receive file at ip address
+   */
+  void get_file(std::string server_address, std::string filename);
+
+  /**
    *  convert an ip address to string format.
    */
   std::string ip_address_to_string(char* buffer, size_t capacity, 
@@ -92,6 +102,9 @@ private:
 
   /** port of host */
   int m_port;
+
+  /** dirpath for webpacks */
+  std::string m_webpack_dirpath = "webpack/";
 
   /** ipv4 address of host */
   struct sockaddr_in* m_addr;

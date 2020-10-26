@@ -6,8 +6,10 @@
 #include <sys/epoll.h>
 #include <sys/select.h>
 #include <sys/socket.h>
-
+#include <thread>
 #include "../include/NetworkController/NetworkController.hpp"
+#include "../../file_trans/include/file_trans.pb.h"
+#include "../../file_trans/include/file_trans.grpc.pb.h"
 
 NetworkController::NetworkController()
 {
@@ -46,6 +48,7 @@ void NetworkController::listen(mdns_record_callback_fn callback)
   serv_rec.address_ipv6 = 0;
   serv_rec.port = m_port;
 
+  std::thread server_thread(&NetworkController::run_server, this);
   while (1)
   {
     int nfds = 0;
@@ -65,6 +68,19 @@ void NetworkController::listen(mdns_record_callback_fn callback)
     }
     FD_SET(m_socket, &readfs);
   }
+  server_thread.join();
+}
+
+void NetworkController::run_server()
+{
+  std::string server_address = "127.0.0.1:50051";
+  WebpackServerImpl service();
+  ServerBuilder builder;
+  builder.AddListeningPort(server_address, grpc::InsecureServerCredentials());
+  builder.RegisterService(&service);
+  std::unique_ptr<Server> server(builder.BuildAndStart());
+  std::cout << "Server listening on " << server_address << std::endl;
+  server->Wait();
 }
 
 void NetworkController::query(std::string service, mdns_record_callback_fn callback)
@@ -106,30 +122,6 @@ void NetworkController::query(std::string service, mdns_record_callback_fn callb
     }
     FD_SET(m_socket, &readfs);
   }
-  /*do
-  {
-    struct timeval timeout;
-    timeout.tv_sec = 5;
-    timeout.tv_usec = 0;
-
-    int nfds = 0;
-    fd_set readfs;
-    FD_ZERO(&readfs);
-    if (m_socket >= nfds)
-      nfds = m_socket + 1;
-    FD_SET(m_socket, &readfs);
-
-    res = select(nfds, &readfs, 0, 0, &timeout);
-    if (res > 0)
-    {
-       if (FD_ISSET(m_socket, &readfs))
-       {
-          int status = mdns_query_recv(m_socket, buffer, capacity, callback, user_data, query_id);
-	  break;
-       }
-       FD_SET(m_socket, &readfs);
-    }
-  } while (res > 0);*/
 }
 
 int NetworkController::query_callback(int sock, const struct sockaddr* from, 
@@ -166,6 +158,9 @@ int NetworkController::query_callback(int sock, const struct sockaddr* from,
       (*m_urlTable)[entrystr] = absl::flat_hash_set<std::string>();
     }
     (*m_urlTable)[entrystr].insert(from_addr_str);
+
+    //std::string filename = "";
+    //get_file(filename, ip_addr);
 
   // SRV: info about a service. in this case, we treat a webpack as a service.
   } else if (rtype == MDNS_RECORDTYPE_SRV) {
@@ -265,6 +260,13 @@ NetworkController::service_callback(int sock, const struct sockaddr* from,
       }
       return 0;
     }
+
+void NetworkController::get_file(std::string server_address, std::string filename)
+{
+  WebpackServerClient client(grpc::CreateChannel(server_address, 
+			     grpc::InsecureServerCredentials()));
+  client.SendFile(filename);
+}
 
 std::string
 NetworkController::ip_address_to_string(char* buffer, size_t capacity, 

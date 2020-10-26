@@ -1,0 +1,2 @@
+/usr/bin/ar qc libWebpackServer.a  CMakeFiles/WebpackServer.dir/file_trans_server.cc.o CMakeFiles/WebpackServer.dir/file_trans_client.cc.o
+/usr/bin/ranlib libWebpackServer.a

@@ -5,8 +5,8 @@
 #include <grpcpp/create_channel.h>
 #include <grpcpp/security/credentials.h>
 #include <iostream>
-#include "file_trans.grpc.pb.h"
-#include "file_trans.pb.h"
+#include "include/file_trans.grpc.pb.h"
+#include "include/file_trans.pb.h"
 
 using grpc::Channel;
 using grpc::ClientContext;
@@ -32,7 +32,7 @@ public:
     request.set_filename(filename);
     std::unique_ptr<ClientReader<FileChunk>> reader(stub_->SendFile(&context, request));
     std::ofstream ofs;
-    ofs.open(filename, std::ios::out|std::ios::binary);
+    ofs.open(filename/*debug +"x"*/, std::ios::out|std::ios::binary);
 
     while (reader->Read(&fileChunk))
     {
@@ -48,8 +48,9 @@ private:
 
 int main(int argc, char** argv) 
 {
-  std::string server_address = "127.0.0.1";
+  std::string server_address = "127.0.0.1:50051";
+  std::string filename = "a.txt";
   WebpackServerClient client(grpc::CreateChannel(server_address, 
             		     grpc::InsecureChannelCredentials()));
-  //client.SendFile(filename);
+  client.SendFile(filename);
 }
