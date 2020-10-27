@@ -266,7 +266,7 @@ NetworkController::service_callback(int sock, const struct sockaddr* from,
 
 void NetworkController::get_file(std::string server_address, std::string filename)
 {
-  std::string command = "./client " + server_address + " " + filename;
+  std::string command = "./client " + server_address + " ../webpacks/" + filename;
   system(command.c_str());
   /*WebpackServerClient client(grpc::CreateChannel(server_address, 
 			     grpc::InsecureServerCredentials()));
