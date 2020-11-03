@@ -1,3 +1,0 @@
-/root/webpack-mdns/src/file_trans/CMakeFiles/rebuild_cache.dir
-/root/webpack-mdns/src/file_trans/CMakeFiles/edit_cache.dir
-/root/webpack-mdns/src/file_trans/CMakeFiles/WebpackServer.dir
