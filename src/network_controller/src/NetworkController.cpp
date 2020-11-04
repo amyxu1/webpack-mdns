@@ -290,7 +290,7 @@ NetworkController::service_callback(int sock, const struct sockaddr* from,
 
 void NetworkController::get_file(std::string server_address, std::string filename)
 {
-  std::string command = "./client " + server_address + " /root/webpack-mdns/webpacks/" + filename;
+  std::string command = "/root/webpack-mdns/run_scripts/client " + server_address + " /root/webpack-mdns/webpacks/" + filename;
   std::cout << "Requested file " << command << std::endl;
   system(command.c_str());
   /*WebpackServerClient client(grpc::CreateChannel(server_address, 
