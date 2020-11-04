@@ -105,7 +105,7 @@ void NetworkController::query(std::string service, mdns_record_callback_fn callb
 
   std::cout << "Reading mDNS query responses\n";
   int res;
-  while (1)
+  /*while (1)
   {
     int nfds = 0;
     fd_set readfs;
@@ -124,7 +124,31 @@ void NetworkController::query(std::string service, mdns_record_callback_fn callb
       }
     }
     FD_SET(m_socket, &readfs);
-  }
+  }*/
+  do
+  {
+    struct timeval timeout;
+    timeout.tv_sec = 5;
+    timeout.tv_usec = 0;
+
+    int nfds = 0;
+    fd_set readfs;
+    FD_ZERO(&readfs);
+    if (m_socket >= nfds)
+      nfds = m_socket + 1;
+    FD_SET(m_socket, &readfs);
+
+    res = select(nfds, &readfs, 0, 0, &timeout);
+    if (res > 0)
+    {
+       if (FD_ISSET(m_socket, &readfs))
+       {
+          int status = mdns_query_recv(m_socket, buffer, capacity, callback, user_data, query_id);
+       //   break;
+       }
+       FD_SET(m_socket, &readfs);
+    }
+  } while (res > 0);
 }
 
 int NetworkController::query_callback(int sock, const struct sockaddr* from, 
@@ -161,9 +185,8 @@ int NetworkController::query_callback(int sock, const struct sockaddr* from,
       (*m_urlTable)[entrystr] = absl::flat_hash_set<std::string>();
     }
     (*m_urlTable)[entrystr].insert(from_addr_str);
-
-    std::string filename = entrystr; // TODO: Add wrapper get_filename fn
-    get_file(filename, from_addr_str);
+    std::vector<std::string> v = absl::StrSplit(from_addr_str, ":"); // TODO: function
+    get_file(v.front() + ":50051", namestr.substr(0, namestr.size()-1));
 
   // SRV: info about a service. in this case, we treat a webpack as a service.
   } else if (rtype == MDNS_RECORDTYPE_SRV) {
@@ -186,7 +209,9 @@ int NetworkController::query_callback(int sock, const struct sockaddr* from,
     }
 
     (*m_urlTable)[hostnameAndService.first].insert(hostnameAndService.second);
-    get_file(entrystr, from_addr_str);
+    // TODO: Separate out this part into a function
+    std::vector<std::string> v = absl::StrSplit(from_addr_str, ":");
+    get_file(v.front() + ":50051", entrytype);
 
   // A: domain name -> ip address
   } else if (rtype == MDNS_RECORDTYPE_A) {
@@ -266,7 +291,7 @@ NetworkController::service_callback(int sock, const struct sockaddr* from,
 void NetworkController::get_file(std::string server_address, std::string filename)
 {
   std::string command = "./client " + server_address + " /root/webpack-mdns/webpacks/" + filename;
-  std::cout << "Requested file " << filename << std::endl;
+  std::cout << "Requested file " << command << std::endl;
   system(command.c_str());
   /*WebpackServerClient client(grpc::CreateChannel(server_address, 
 			     grpc::InsecureServerCredentials()));
