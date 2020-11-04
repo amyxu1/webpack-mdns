@@ -44,4 +44,4 @@ networks:
     driver: bridge
     driver_opts:
       encrypted: ""
-    internal: true
+    internal: false
