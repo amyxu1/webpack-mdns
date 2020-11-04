@@ -7,15 +7,15 @@ volumes:
 
 services:
   requester:
-    image: amyxu1/webpack-research:mdns-grpc-debug
+    # image: amyxu1/webpack-research:mdns-grpc-debug
     # Sequence startup after the provider container
     depends_on:
       - provider
     networks:
       - mdns-net
-    # build:
-    #   context: ./
-    #   dockerfile: Dockerfile
+    build:
+      context: ./
+      dockerfile: "pkg/mdns-controller/Dockerfile"
     container_name: requester
     #ports:
     #  - "5353:5353"
@@ -26,9 +26,12 @@ services:
       \""
 
   provider:
-    image: amyxu1/webpack-research:mdns-grpc-debug
+    # image: amyxu1/webpack-research:mdns-grpc-debug
     networks:
       - mdns-net
+    build:
+      context: ./
+      dockerfile: "pkg/mdns-controller/Dockerfile"
     container_name: provider
     entrypoint: "bash -c \"\
       cd /root/webpack-mdns/run_scripts/ && \
