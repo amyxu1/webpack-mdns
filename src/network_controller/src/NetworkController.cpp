@@ -20,7 +20,6 @@ NetworkController::NetworkController(absl::flat_hash_set<std::string> services)
   m_services = services;
   m_urlTable = new absl::flat_hash_map<std::string, absl::flat_hash_set<std::string>>();
   m_port = MDNS_PORT;
-
   setup_ipv4();
 }
 
@@ -31,7 +30,6 @@ void NetworkController::setup_ipv4()
   m_addr->sin_family = AF_INET;
   m_addr->sin_addr.s_addr = INADDR_ANY;
   m_addr->sin_port = htons(MDNS_PORT);
-
   m_socket = mdns_socket_open_ipv4(m_addr);
   mdns_socket_setup_ipv4(m_socket, m_addr);
   std::cout << "setup_ipv4(): socket setup completed.\n";
@@ -73,8 +71,10 @@ void NetworkController::listen(mdns_record_callback_fn callback)
 
 void NetworkController::run_server()
 {
-  std::string server_address = "127.0.0.1:50051";
-  std::string command = "./server " + server_address;
+  static char addrbuffer[256];
+  std::string server_address = ip_address_to_string(addrbuffer, sizeof(addrbuffer), (const struct sockaddr_in*)m_addr, 16);
+  std::string command = "./server 0.0.0.0:50051";
+  std::cout << command << std::endl;
   system(command.c_str()); // TODO: move copy to mdns-cntroller dir
   /*WebpackServerImpl service();
   ServerBuilder builder;
@@ -186,6 +186,7 @@ int NetworkController::query_callback(int sock, const struct sockaddr* from,
     }
 
     (*m_urlTable)[hostnameAndService.first].insert(hostnameAndService.second);
+    get_file(entrystr, from_addr_str);
 
   // A: domain name -> ip address
   } else if (rtype == MDNS_RECORDTYPE_A) {
@@ -217,7 +218,6 @@ NetworkController::service_callback(int sock, const struct sockaddr* from,
   static char sendbuffer[256];
   static char namebuffer[256];
   static char addrbuffer[64];
-
   // only process questions
   if (entry != MDNS_ENTRYTYPE_QUESTION)
     return 0;
@@ -228,7 +228,6 @@ NetworkController::service_callback(int sock, const struct sockaddr* from,
     std::string service(mdns_record_parse_ptr(data, size, record_offset, record_length,
       namebuffer, sizeof(namebuffer)).str);
     std::cout << fromaddrstr << " : question PTR " << service << "\n";
-
     // if host has web bundle, respond
     if (has_service(service)) {
       uint16_t unicast = rclass & MDNS_UNICAST_RESPONSE;
@@ -266,7 +265,8 @@ NetworkController::service_callback(int sock, const struct sockaddr* from,
 
 void NetworkController::get_file(std::string server_address, std::string filename)
 {
-  std::string command = "./client " + server_address + " ../webpacks/" + filename;
+  std::string command = "./client " + server_address + " /root/webpack-mdns/webpacks/" + filename;
+  std::cout << "Requested file " << filename << std::endl;
   system(command.c_str());
   /*WebpackServerClient client(grpc::CreateChannel(server_address, 
 			     grpc::InsecureServerCredentials()));
