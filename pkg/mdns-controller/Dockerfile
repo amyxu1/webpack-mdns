@@ -12,7 +12,7 @@ COPY . /root/webpack-mdns
 
 # Build the project
 WORKDIR /root/webpack-mdns
-RUN rm -r build
+RUN rm -rf build
 RUN mkdir build
 WORKDIR /root/webpack-mdns/build
 RUN cmake ../
