@@ -1,6 +1,6 @@
 FROM ubuntu:20.04 as baseline
 
-RUN apt-get update && apt-get install -y libprotobuf-dev net-tools g++ cmake tcpdump iproute2
+RUN apt-get update && apt-get install -y libprotobuf-dev net-tools g++ cmake tcpdump iproute2 iputils-ping curl
 
 COPY webpacks/ /root/webpack-mdns/webpacks
 COPY run_scripts /root/webpack-mdns/run_scripts
