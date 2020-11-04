@@ -7,7 +7,7 @@ MAX_WAIT_TIME_SECONDS = 15
 MAX_QUERY_TIMEOUT_SECONDS = 30
 
 def send_query(webpack_name):
-	cl_args = ['/root/webpack-mdns/mdns-controller', '--query', webpack_name]
+	cl_args = ['/root/webpack-mdns/run_scripts/mdns-controller', '--query', webpack_name]
 	start_time = time.perf_counter()
 	subprocess.run(cl_args, timeout=MAX_QUERY_TIMEOUT_SECONDS)
 	end_time = time.perf_counter()

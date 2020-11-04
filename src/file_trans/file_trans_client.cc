@@ -37,6 +37,7 @@ public:
     while (reader->Read(&fileChunk))
     {
       const std::string& chunk = fileChunk.chunk();
+      std::cout << chunk << std::endl;
       ofs.write(chunk.c_str(), chunk.length());
     }
     ofs.close();

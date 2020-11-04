@@ -29,6 +29,7 @@ public:
     std::ifstream fileBuffer(request->filename(), std::ios::in|std::ios::binary);
     fileBuffer.seekg(0, fileBuffer.beg);
     char inputBuffer[FILE_CHUNK_SIZE_BYTES];
+    std::cout << "Sending file " << request->filename() << std::endl;
     while (fileBuffer.good())
     {
       FileChunk fileChunk;

@@ -62,7 +62,7 @@ int main(int argc, const char* const* argv)
     }
   }
 
-  NetworkController nc = NetworkController(webbundle_list);
+  nc = NetworkController(webbundle_list);
   if (mode == 1)
   {
     nc.query(service, wrapped_query_callback);
