@@ -1,4 +1,0 @@
-/share/mdns/cmake/mdnsTargets.cmake
-/share/mdns/cmake/mdnsConfig.cmake
-/share/mdns/cmake/mdnsConfigVersion.cmake
-/include/mdns.h
