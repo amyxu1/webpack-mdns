@@ -102,51 +102,34 @@ void NetworkController::query(std::string service, mdns_record_callback_fn callb
   {
     std::cout << "Failed to send mDNS query: " << strerror(errno) << "\n";
   }
+  // temp hack to get things working - my belief is sending the query on the 
+  // same socket causes the readfs to pop?
+  mdns_query_recv(m_socket, buffer, capacity, callback, user_data, query_id);
 
   std::cout << "Reading mDNS query responses\n";
   int res;
-  /*while (1)
-  {
-    int nfds = 0;
-    fd_set readfs;
-    FD_ZERO(&readfs);
-    if (m_socket >= nfds)
-    {
-      nfds = m_socket + 1;
-    }
-    FD_SET(m_socket, &readfs);
-
-    if (select(nfds, &readfs, 0, 0, 0) >= 0)
-    {
-      if (FD_ISSET(m_socket, &readfs)) {
-	int status = mdns_query_recv(m_socket, buffer, capacity, callback, user_data, query_id);
-	break;
-      }
-    }
-    FD_SET(m_socket, &readfs);
-  }*/
   do
   {
     struct timeval timeout;
     timeout.tv_sec = 5;
     timeout.tv_usec = 0;
-
+    
     int nfds = 0;
     fd_set readfs;
     FD_ZERO(&readfs);
     if (m_socket >= nfds)
+    {
       nfds = m_socket + 1;
+    }
     FD_SET(m_socket, &readfs);
 
-    res = select(nfds, &readfs, 0, 0, &timeout);
+    res = select(nfds, &readfs, NULL, NULL, &timeout);
     if (res > 0)
     {
-       if (FD_ISSET(m_socket, &readfs))
-       {
-          int status = mdns_query_recv(m_socket, buffer, capacity, callback, user_data, query_id);
-       //   break;
-       }
-       FD_SET(m_socket, &readfs);
+      if (FD_ISSET(m_socket, &readfs)) {
+	int status = mdns_query_recv(m_socket, buffer, capacity, callback, user_data, query_id);
+	break;
+      }
     }
   } while (res > 0);
 }
