@@ -1,9 +1,9 @@
 [submodule "grpc"]
-	path = grpc
+	path = thirdparty/grpc
 	url = https://github.com/grpc/grpc
 [submodule "mdns"]
-	path = mdns
+	path = thirdparty/mdns
 	url = https://github.com/mjansson/mdns/
 [submodule "abseil-cpp"]
-	path = abseil-cpp
+	path = thirdparty/abseil-cpp
 	url = https://github.com/abseil/abseil-cpp

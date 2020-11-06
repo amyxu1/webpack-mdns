@@ -1,0 +1,51 @@
+# Launches a minimum test harness on a local docker daemon
+
+version: "3"
+
+volumes:
+  keys:
+
+services:
+  requester:
+    # image: amyxu1/webpack-research:mdns-grpc-debug
+    # Sequence startup after the provider container
+    depends_on:
+      - provider
+    networks:
+      - mdns-net
+    build:
+      context: ./
+      dockerfile: "pkg/mdns-controller/Dockerfile"
+    container_name: requester
+    sysctls:
+      - net.ipv4.icmp_echo_ignore_broadcasts=0
+    #ports:
+    #  - "5353:5353"
+    entrypoint: "bash -c \"\
+      cd /root/webpack-mdns/run_scripts/ && \
+      ./mdns-controller --query a.wp && \
+      sleep 1000000 \
+      \""
+
+  provider:
+    # image: amyxu1/webpack-research:mdns-grpc-debug
+    networks:
+      - mdns-net
+    build:
+      context: ./
+      dockerfile: "pkg/mdns-controller/Dockerfile"
+    container_name: provider
+    sysctls:
+      - net.ipv4.icmp_echo_ignore_broadcasts=0
+    entrypoint: "bash -c \"\
+      cd /root/webpack-mdns/run_scripts/ && \
+      ./mdns-controller --listen a.wp && \
+      sleep 1000000 \
+      \""
+
+networks:
+  mdns-net:
+    driver: bridge
+    driver_opts:
+      encrypted: ""
+    internal: false

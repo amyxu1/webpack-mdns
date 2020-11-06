@@ -2,7 +2,7 @@
 #include <iostream>
 #include <sys/epoll.h>
 
-#include "/root/webpack-mdns/src/network_controller/include/NetworkController/NetworkController.hpp"
+#include "NetworkController/NetworkController.hpp"
 
 NetworkController nc;
 
