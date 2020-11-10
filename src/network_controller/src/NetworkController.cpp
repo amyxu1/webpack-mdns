@@ -2,7 +2,6 @@
 #include <cstdio>
 #include <iostream>
 #include <netdb.h>
-#include <stdio.h>
 #include <stdlib.h>
 #include <sys/epoll.h>
 #include <sys/select.h>
@@ -98,8 +97,6 @@ void NetworkController::query(std::string service, mdns_record_callback_fn callb
   // queryid of 0 signifies a multicast query
   int query_id = mdns_query_send(m_socket, MDNS_RECORDTYPE_PTR, service.c_str(), 
            service.length(), buffer, capacity, 0 /*queryid*/);
-
-  // clear self buffer
   if (query_id)
   {
     std::cout << "Failed to send mDNS query: " << strerror(errno) << "\n";
@@ -128,7 +125,7 @@ void NetworkController::query(std::string service, mdns_record_callback_fn callb
       if (FD_ISSET(m_socket, &readfs)) {
 	int status = mdns_query_recv(m_socket, buffer, capacity, callback, user_data, query_id);
 	std::cout << status << std::endl;
-	if (status)
+	if (status) // indicates non-zero number of responses read
 	  break;
       }
     }
