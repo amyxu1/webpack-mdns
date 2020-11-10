@@ -2,6 +2,7 @@
 #include <cstdio>
 #include <iostream>
 #include <netdb.h>
+#include <stdio.h>
 #include <stdlib.h>
 #include <sys/epoll.h>
 #include <sys/select.h>
@@ -98,14 +99,12 @@ void NetworkController::query(std::string service, mdns_record_callback_fn callb
   int query_id = mdns_query_send(m_socket, MDNS_RECORDTYPE_PTR, service.c_str(), 
            service.length(), buffer, capacity, 0 /*queryid*/);
 
+  // clear self buffer
   if (query_id)
   {
     std::cout << "Failed to send mDNS query: " << strerror(errno) << "\n";
   }
-  // temp hack to get things working - my belief is sending the query on the 
-  // same socket causes the readfs to pop?
-  mdns_query_recv(m_socket, buffer, capacity, callback, user_data, query_id);
-
+  
   std::cout << "Reading mDNS query responses\n";
   int res;
   do
@@ -128,7 +127,9 @@ void NetworkController::query(std::string service, mdns_record_callback_fn callb
     {
       if (FD_ISSET(m_socket, &readfs)) {
 	int status = mdns_query_recv(m_socket, buffer, capacity, callback, user_data, query_id);
-	break;
+	std::cout << status << std::endl;
+	if (status)
+	  break;
       }
     }
   } while (res > 0);
@@ -213,7 +214,7 @@ int NetworkController::query_callback(int sock, const struct sockaddr* from,
       << rtype << " rclass 0x" << rclass << " ttl " << ttl << " length "
       << (int)record_length << "\n";
   }
-  return 0;
+  return 1;
 }
 
 int
