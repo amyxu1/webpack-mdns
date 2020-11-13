@@ -42,6 +42,8 @@ def main(argv):
 	output.writelines(total_time_list)
 	output.close()
 
+        for i in total_time_list:
+            print(i)
 	print('Ran ' + str(num_queries) + ' queries.')
 	print('Average time per query: ' + str(total_time_sum / num_queries) + ' s.')
 
