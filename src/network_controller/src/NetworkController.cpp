@@ -73,7 +73,7 @@ void NetworkController::run_server()
 {
   static char addrbuffer[256];
   std::string server_address = ip_address_to_string(addrbuffer, sizeof(addrbuffer), (const struct sockaddr_in*)m_addr, 16);
-  std::string command = "./server 0.0.0.0:50051";
+  std::string command = "/root/webpack-mdns/run_scripts/server 0.0.0.0:50051";
   std::cout << command << std::endl;
   system(command.c_str()); // TODO: move copy to mdns-cntroller dir
   /*WebpackServerImpl service();
