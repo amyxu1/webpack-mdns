@@ -33,17 +33,14 @@ def main(argv):
 	for i in range(1, num_queries+1):
 		# todo: replace this with a generator
 		time.sleep(random.randrange(MAX_WAIT_TIME_SECONDS))
-		runtime = send_query(webpack_names[(num_packs - 1) % i])
-		total_time_list.append(str(runtime) + '\n')
+		runtime = send_query(webpack_names[i-1])#send_query(webpack_names[(num_packs - 1) % i])
+		total_time_list.append(str(runtime))
 		total_time_sum += runtime
 
-	# write time scores out to file
-	output = open('/root/webpack-mdns/run_scripts/results/auto_query_' + str(num_queries) + '.csv', 'w+')
-	output.writelines(total_time_list)
-	output.close()
-
-        for i in total_time_list:
-            print(i)
+        print('>>>> START TIME OUTPUT')
+	for i in total_time_list:
+		print(i)
+        print('<<<< END TIME OUTPUT')
 	print('Ran ' + str(num_queries) + ' queries.')
 	print('Average time per query: ' + str(total_time_sum / num_queries) + ' s.')
 
