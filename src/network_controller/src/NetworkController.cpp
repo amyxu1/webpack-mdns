@@ -196,7 +196,7 @@ int NetworkController::query_callback(int sock, const struct sockaddr* from,
     (*m_urlTable)[hostnameAndService.first].insert(hostnameAndService.second);
     // TODO: Separate out this part into a function
     std::vector<std::string> v = absl::StrSplit(from_addr_str, ":");
-    get_file(v.front() + "11000", entrytype); // 50051 grpc
+    get_file(v.front() + ":11000", entrytype); // 50051 grpc
 
   // A: domain name -> ip address
   } else if (rtype == MDNS_RECORDTYPE_A) {
@@ -276,7 +276,7 @@ NetworkController::service_callback(int sock, const struct sockaddr* from,
 void NetworkController::get_file(std::string server_address, std::string filename)
 {
   //std::string command = "/root/webpack-mdns/run_scripts/client " + server_address + " /root/webpack-mdns/webpacks/" + filename;
-  std::string command = "curl -O http://" + server_address + "/root/webpack-mdns/webpacks/filename";
+  std::string command = "curl -O http://" + server_address + "/root/webpack-mdns/webpacks/" + filename;
   std::cout << "Requested file " << command << std::endl;
   system(command.c_str());
   /*WebpackServerClient client(grpc::CreateChannel(server_address, 
