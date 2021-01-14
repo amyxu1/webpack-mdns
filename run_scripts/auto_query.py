@@ -37,10 +37,10 @@ def main(argv):
 		total_time_list.append(str(runtime))
 		total_time_sum += runtime
 
-        print('>>>> START TIME OUTPUT')
+	print('>>>> START TIME OUTPUT')
 	for i in total_time_list:
 		print(i)
-        print('<<<< END TIME OUTPUT')
+	print('<<<< END TIME OUTPUT')
 	print('Ran ' + str(num_queries) + ' queries.')
 	print('Average time per query: ' + str(total_time_sum / num_queries) + ' s.')
 

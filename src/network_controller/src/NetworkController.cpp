@@ -32,7 +32,6 @@ void NetworkController::setup_ipv4()
   m_addr->sin_port = htons(MDNS_PORT);
   m_socket = mdns_socket_open_ipv4(m_addr);
   mdns_socket_setup_ipv4(m_socket, m_addr);
-  std::cout << "setup_ipv4(): socket setup completed.\n";
 }
 
 void NetworkController::listen(mdns_record_callback_fn callback)
@@ -228,12 +227,16 @@ NetworkController::service_callback(int sock, const struct sockaddr* from,
   static char sendbuffer[256];
   static char namebuffer[256];
   static char addrbuffer[64];
+  static char addrbuffer2[64];
   // only process questions
   if (entry != MDNS_ENTRYTYPE_QUESTION)
     return 0;
 
   // get address
   std::string fromaddrstr = ip_address_to_string(addrbuffer, sizeof(addrbuffer), (const struct sockaddr_in*)from, addrlen);
+  if (fromaddrstr.compare(ip_address_to_string(addrbuffer2, sizeof(addrbuffer2), (const struct sockaddr_in*)m_addr, addrlen)) == 0)
+    return 0;
+
   if (rtype == MDNS_RECORDTYPE_PTR) {
     std::string service(mdns_record_parse_ptr(data, size, record_offset, record_length,
       namebuffer, sizeof(namebuffer)).str);
