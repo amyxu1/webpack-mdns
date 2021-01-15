@@ -54,7 +54,7 @@ int main(int argc, char* argv[]) {
   folly::init(&argc, &argv, true);
 
   std::vector<HTTPServer::IPConfig> IPs = {
-      {SocketAddress(FLAGS_ip, FLAGS_http_port, true), Protocol::HTTP},
+      {SocketAddress(argv[1], FLAGS_http_port, true), Protocol::HTTP},
       {SocketAddress(FLAGS_ip, FLAGS_h2_port, true), Protocol::HTTP2},
   };
 

@@ -164,7 +164,8 @@ int NetworkController::query_callback(int sock, const struct sockaddr* from,
       << namestr << " rclass 0x" << rclass << " ttl " << ttl << " length " 
       << (int)record_length << "\n";
 
-    if (!m_urlTable->contains(entrystr))
+    int end_idx = entrystr.find_last_not_of('.');
+    if (!m_urlTable->contains(entrystr.substr(0, end_idx + 1)))
     {
       (*m_urlTable)[entrystr] = absl::flat_hash_set<std::string>();
     }
@@ -241,6 +242,7 @@ NetworkController::service_callback(int sock, const struct sockaddr* from,
     std::string service(mdns_record_parse_ptr(data, size, record_offset, record_length,
       namebuffer, sizeof(namebuffer)).str);
     std::cout << fromaddrstr << " : question PTR " << service << "\n";
+    std::cout << "amyxu_debug: " << "has_service " << service << " " << has_service(service) << "\n";
     // if host has web bundle, respond
     if (has_service(service)) {
       uint16_t unicast = rclass & MDNS_UNICAST_RESPONSE;
@@ -251,8 +253,11 @@ NetworkController::service_callback(int sock, const struct sockaddr* from,
       if (!unicast)
         addrlen = 0;
 
+      int end_idx = service.find_last_not_of('.');
+      std::string service_ret = service.substr(0, end_idx+1);
+
       mdns_query_answer(sock, from, addrlen, sendbuffer, sizeof(sendbuffer), 
-        query_id, service.c_str(), service.length(), 
+        query_id, service_ret.c_str(), service_ret.length(), 
         m_hostname.c_str(), m_hostname.length(), m_addr->sin_addr.s_addr,
                           0 /* ipv6 addr */, (uint16_t)m_port,
                           0 /* txt */, 0 /* txt length */);
