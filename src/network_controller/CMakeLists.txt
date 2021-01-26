@@ -21,5 +21,6 @@ target_link_libraries(NetworkController
 	absl::raw_hash_map 
 	absl::raw_hash_set 
 	absl::strings 
-	Threads::Threads 
+	Threads::Threads
+        curl	
 	mdns)

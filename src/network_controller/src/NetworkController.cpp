@@ -1,4 +1,5 @@
 #include <absl/strings/str_split.h>
+#include <curl/curl.h>
 #include <cstdio>
 #include <iostream>
 #include <netdb.h>
@@ -8,8 +9,12 @@
 #include <sys/socket.h>
 #include <thread>
 #include "../include/NetworkController/NetworkController.hpp"
-//#include "../../file_trans/include/file_trans.pb.h"
-//#include "../../file_trans/include/file_trans.grpc.pb.h"
+
+static size_t write_data(void *ptr, size_t size, size_t nmemb, void *stream) 
+{
+  size_t written = fwrite(ptr, size, nmemb, (FILE *)stream);
+  return written;
+}
 
 NetworkController::NetworkController()
 {
@@ -284,12 +289,30 @@ NetworkController::service_callback(int sock, const struct sockaddr* from,
 void NetworkController::get_file(std::string server_address, std::string filename)
 {
   //std::string command = "/root/webpack-mdns/run_scripts/client " + server_address + " /root/webpack-mdns/webpacks/" + filename;
-  std::string command = "curl -O http://" + server_address + "/root/webpack-mdns/webpacks/" + filename;
-  std::cout << "Requested file " << command << std::endl;
-  system(command.c_str());
-  /*WebpackServerClient client(grpc::CreateChannel(server_address, 
-			     grpc::InsecureServerCredentials()));
-  client.SendFile(filename);*/
+  //std::string command = "curl -O http://" + server_address + "/root/webpack-mdns/webpacks/" + filename;
+  std::string full_filename = "/root/webpack-mdns/webpacks/" + filename;
+  std::cout << "Requested file " << full_filename << std::endl;
+  //system(command.c_str());
+  
+  CURL *curl_handle;
+  std::string url = "http://" + server_address + full_filename;
+  FILE *download;
+
+  // TODO: Move cleanup/teardown to open and close fns
+  curl_global_init(CURL_GLOBAL_ALL);
+  curl_handle = curl_easy_init();
+  curl_easy_setopt(curl_handle, CURLOPT_URL, url);
+  curl_easy_setopt(curl_handle, CURLOPT_WRITEFUNCTION, write_data);
+
+  download = fopen(full_filename.c_str(), "wb");
+  if (download) 
+  {
+     curl_easy_setopt(curl_handle, CURLOPT_WRITEDATA, download);
+     curl_easy_perform(curl_handle);
+     fclose(download);
+  }
+  curl_easy_cleanup(curl_handle);
+  curl_global_cleanup();
 }
 
 std::string
