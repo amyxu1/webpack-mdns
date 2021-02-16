@@ -47,11 +47,9 @@ int main(int argc, const char* const* argv)
     if (!strcmp(argv[i], "--net"))
     {
       i++;
-      std::cout << "a";
       nic = argv[i];
     } else if (!strcmp(argv[i], "--ip"))
     {
-      std::cout << "b";
       i++;
       hostip = argv[i];
     } else if (!strcmp(argv[i], "--query"))
