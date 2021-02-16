@@ -1,4 +1,5 @@
 #include <absl/strings/str_split.h>
+#include <arpa/inet.h>
 #include <curl/curl.h>
 #include <cstdio>
 #include <iostream>
@@ -20,12 +21,16 @@ NetworkController::NetworkController()
 {
 }
 
-NetworkController::NetworkController(absl::flat_hash_set<std::string> services) 
+// TODO: improve the style
+NetworkController::NetworkController(std::string nic, std::string hostip, absl::flat_hash_set<std::string> services) 
 {
   m_services = services;
   m_urlTable = new absl::flat_hash_map<std::string, absl::flat_hash_set<std::string>>();
   m_port = MDNS_PORT;
+  m_interface = nic;
+  m_ipaddrstring = hostip;
   setup_ipv4();
+  std::cout << nic << " " << hostip << "\n";
 }
 
 void NetworkController::setup_ipv4()
@@ -33,10 +38,11 @@ void NetworkController::setup_ipv4()
   m_addr = (struct sockaddr_in*)malloc(sizeof(struct sockaddr_in));	
   memset(m_addr, 0, sizeof(struct sockaddr_in));
   m_addr->sin_family = AF_INET;
-  m_addr->sin_addr.s_addr = INADDR_ANY;
+  m_addr->sin_addr.s_addr = !m_ipaddrstring.empty() ? inet_addr(m_ipaddrstring.c_str()) : INADDR_ANY;
   m_addr->sin_port = htons(MDNS_PORT);
-  m_socket = mdns_socket_open_ipv4(m_addr);
-  mdns_socket_setup_ipv4(m_socket, m_addr);
+  //std::string interface = "enx00808e9a856d";
+  m_socket = mdns_socket_open_ipv4(m_addr, const_cast<char *>(m_interface.c_str()));
+  //mdns_socket_setup_ipv4(m_socket, m_addr, interface);
 }
 
 void NetworkController::listen(mdns_record_callback_fn callback)

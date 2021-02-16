@@ -39,10 +39,22 @@ int main(int argc, const char* const* argv)
 {
   int mode = -1;
   std::string service;
+  std::string nic;
+  std::string hostip;
   absl::flat_hash_set<std::string> webbundle_list;
   for (int i = 0; i < argc; i++)
   {
-    if (!strcmp(argv[i], "--query"))
+    if (!strcmp(argv[i], "--net"))
+    {
+      i++;
+      std::cout << "a";
+      nic = argv[i];
+    } else if (!strcmp(argv[i], "--ip"))
+    {
+      std::cout << "b";
+      i++;
+      hostip = argv[i];
+    } else if (!strcmp(argv[i], "--query"))
     {
       mode = 1;
       i++;
@@ -61,8 +73,8 @@ int main(int argc, const char* const* argv)
       }
     }
   }
-
-  nc = NetworkController(webbundle_list);
+  std::cout << "main: hostip = " << hostip << " nic = " << nic << "\n";
+  nc = NetworkController(nic, hostip, webbundle_list);
   if (mode == 1)
   {
     nc.query(service, wrapped_query_callback);

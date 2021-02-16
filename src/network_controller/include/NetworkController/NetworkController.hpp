@@ -16,7 +16,7 @@ class NetworkController
 public:
   NetworkController();
 
-  NetworkController(absl::flat_hash_set<std::string> services);
+  NetworkController(std::string nic, std::string hostip, absl::flat_hash_set<std::string> services);
 
   /**
    *  listen for incoming queries and responses. updates table and answers
@@ -85,7 +85,8 @@ private:
    */
   bool has_service(std::string srv_name)
   {
-    return m_services.contains(srv_name.substr(0, srv_name.size()-1));
+    int end_pos = srv_name.find_last_not_of('.');
+    return m_services.contains(srv_name.substr(0, end_pos+1));
   }
 
   /** table mapping from hostname to available web bundles */
@@ -108,4 +109,10 @@ private:
 
   /** ipv4 address of host */
   struct sockaddr_in* m_addr;
+
+  /** ipv4 address of host, as a string */
+  std::string m_ipaddrstring;
+
+  /** network interface name */
+  std::string m_interface;
 };
