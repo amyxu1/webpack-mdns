@@ -1,0 +1,1075 @@
+/root/webpack-mdns/run_scripts/proxygen_static
+172.25.0.4:5353 : question PTR 24.wp.
+amyxu_debug: has_service 24.wp. 0
+172.25.0.2:5353 : question PTR 47.wp.
+amyxu_debug: has_service 47.wp. 0
+172.25.0.2:5353 : question PTR 45.wp.
+amyxu_debug: has_service 45.wp. 0
+172.25.0.2:5353 : question PTR 38.wp.
+amyxu_debug: has_service 38.wp. 0
+172.25.0.5:5353 : question PTR 18.wp.
+amyxu_debug: has_service 18.wp. 0
+172.25.0.5:5353 : question PTR 42.wp.
+amyxu_debug: has_service 42.wp. 0
+172.25.0.3:5353 : question PTR 22.wp.
+amyxu_debug: has_service 22.wp. 0
+Sending mDNS query: 16.wp
+172.25.0.6:5353 : question PTR 16.wp.
+amyxu_debug: has_service 16.wp. 0
+Reading mDNS query responses
+0
+172.25.0.5:5353 : answer 16.wp. PTR 16.wp. rclass 0x1 ttl 60 length 2
+Requested file curl -O http://172.25.0.5:11000/root/webpack-mdns/webpacks/16.wp
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  976k    0  976k    0     0   476M      0 --:--:-- --:--:-- --:--:--  476M
+2
+Sending mDNS query: 46.wp
+172.25.0.6:5353 : question PTR 46.wp.
+amyxu_debug: has_service 46.wp. 0
+Reading mDNS query responses
+0
+172.25.0.4:5353 : answer 46.wp. PTR 46.wp. rclass 0x1 ttl 60 length 2
+Requested file curl -O http://172.25.0.4:11000/root/webpack-mdns/webpacks/46.wp
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  976k    0  976k    0     0   476M      0 --:--:-- --:--:-- --:--:--  476M
+2
+172.25.0.4:5353 : question PTR 45.wp.
+amyxu_debug: has_service 45.wp. 0
+172.25.0.5:5353 : question PTR 35.wp.
+amyxu_debug: has_service 35.wp. 0
+172.25.0.2:5353 : question PTR 20.wp.
+amyxu_debug: has_service 20.wp. 0
+172.25.0.3:5353 : question PTR 3.wp..
+amyxu_debug: has_service 3.wp.. 1
+  --> answer .3.wp.. port 5353 (multicast)
+172.25.0.5:5353 : question PTR 44.wp.
+amyxu_debug: has_service 44.wp. 0
+Sending mDNS query: 48.wp
+172.25.0.6:5353 : question PTR 48.wp.
+amyxu_debug: has_service 48.wp. 0
+Reading mDNS query responses
+0
+172.25.0.4:5353 : answer 48.wp. PTR 48.wp. rclass 0x1 ttl 60 length 2
+Requested file curl -O http://172.25.0.4:11000/root/webpack-mdns/webpacks/48.wp
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  976k    0  976k    0     0   953M      0 --:--:-- --:--:-- --:--:--  953M
+2
+Sending mDNS query: 34.wp
+172.25.0.6:5353 : question PTR 34.wp.
+amyxu_debug: has_service 34.wp. 0
+Reading mDNS query responses
+0
+172.25.0.3:5353 : answer 34.wp. PTR 34.wp. rclass 0x1 ttl 60 length 2
+Requested file curl -O http://172.25.0.3:11000/root/webpack-mdns/webpacks/34.wp
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  976k    0  976k    0     0   476M      0 --:--:-- --:--:-- --:--:--  476M
+2
+172.25.0.4:5353 : question PTR 46.wp.
+amyxu_debug: has_service 46.wp. 0
+172.25.0.4:5353 : question PTR 23.wp.
+amyxu_debug: has_service 23.wp. 0
+172.25.0.2:5353 : question PTR 31.wp.
+amyxu_debug: has_service 31.wp. 0
+Sending mDNS query: 13.wp
+172.25.0.6:5353 : question PTR 13.wp.
+amyxu_debug: has_service 13.wp. 0
+Reading mDNS query responses
+0
+172.25.0.5:5353 : answer 13.wp. PTR 13.wp. rclass 0x1 ttl 60 length 2
+Requested file curl -O http://172.25.0.5:11000/root/webpack-mdns/webpacks/13.wp
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  976k    0  976k    0     0   953M      0 --:--:-- --:--:-- --:--:--  953M
+2
+172.25.0.5:5353 : question PTR 33.wp.
+amyxu_debug: has_service 33.wp. 0
+172.25.0.3:5353 : question PTR 48.wp.
+amyxu_debug: has_service 48.wp. 0
+172.25.0.4:5353 : question PTR 44.wp.
+amyxu_debug: has_service 44.wp. 0
+172.25.0.2:5353 : question PTR 42.wp.
+amyxu_debug: has_service 42.wp. 0
+Sending mDNS query: 14.wp
+172.25.0.6:5353 : question PTR 14.wp.
+amyxu_debug: has_service 14.wp. 0
+Reading mDNS query responses
+0
+172.25.0.5:5353 : answer 14.wp. PTR 14.wp. rclass 0x1 ttl 60 length 2
+Requested file curl -O http://172.25.0.5:11000/root/webpack-mdns/webpacks/14.wp
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  976k    0  976k    0     0   953M      0 --:--:-- --:--:-- --:--:--  953M
+2
+172.25.0.5:5353 : question PTR 49.wp.
+amyxu_debug: has_service 49.wp. 0
+Sending mDNS query: 44.wp
+172.25.0.6:5353 : question PTR 44.wp.
+amyxu_debug: has_service 44.wp. 0
+Reading mDNS query responses
+0
+172.25.0.4:5353 : answer 44.wp. PTR 44.wp. rclass 0x1 ttl 60 length 2
+Requested file curl -O http://172.25.0.4:11000/root/webpack-mdns/webpacks/44.wp
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  976k    0  976k    0     0   953M      0 --:--:-- --:--:-- --:--:--  953M
+2
+172.25.0.4:5353 : question PTR 36.wp.
+amyxu_debug: has_service 36.wp. 0
+172.25.0.3:5353 : question PTR 30.wp.
+amyxu_debug: has_service 30.wp. 0
+Sending mDNS query: 12.wp
+172.25.0.6:5353 : question PTR 12.wp.
+amyxu_debug: has_service 12.wp. 0
+Reading mDNS query responses
+0
+172.25.0.5:5353 : answer 12.wp. PTR 12.wp. rclass 0x1 ttl 60 length 2
+Requested file curl -O http://172.25.0.5:11000/root/webpack-mdns/webpacks/12.wp
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  976k    0  976k    0     0   476M      0 --:--:-- --:--:-- --:--:--  476M
+2
+172.25.0.4:5353 : question PTR 49.wp.
+amyxu_debug: has_service 49.wp. 0
+172.25.0.4:5353 : question PTR 4.wp..
+amyxu_debug: has_service 4.wp.. 1
+  --> answer .4.wp.. port 5353 (multicast)
+Sending mDNS query: 24.wp
+172.25.0.6:5353 : question PTR 24.wp.
+amyxu_debug: has_service 24.wp. 0
+Reading mDNS query responses
+0
+172.25.0.2:5353 : answer 24.wp. PTR 24.wp. rclass 0x1 ttl 60 length 2
+Requested file curl -O http://172.25.0.2:11000/root/webpack-mdns/webpacks/24.wp
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  976k    0  976k    0     0   953M      0 --:--:-- --:--:-- --:--:--  953M
+2
+Sending mDNS query: 43.wp
+172.25.0.6:5353 : question PTR 43.wp.
+amyxu_debug: has_service 43.wp. 0
+Reading mDNS query responses
+0
+172.25.0.4:5353 : answer 43.wp. PTR 43.wp. rclass 0x1 ttl 60 length 2
+Requested file curl -O http://172.25.0.4:11000/root/webpack-mdns/webpacks/43.wp
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  976k    0  976k    0     0   953M      0 --:--:-- --:--:-- --:--:--  953M
+2
+>>>> START TIME OUTPUT
+0.016265297308564186
+0.015864817425608635
+0.03339003212749958
+0.016094177961349487
+0.03375529497861862
+0.032844824716448784
+0.016124170273542404
+0.033383797854185104
+0.03374647907912731
+0.016162371262907982
+<<<< END TIME OUTPUT
+Ran 10 queries.
+Average time per query: 0.02476312629878521 s.
+172.25.0.4:5353 : question PTR 31.wp.
+amyxu_debug: has_service 31.wp. 0
+172.25.0.2:5353 : question PTR 32.wp.
+amyxu_debug: has_service 32.wp. 0
+172.25.0.2:5353 : question PTR 37.wp.
+amyxu_debug: has_service 37.wp. 0
+172.25.0.2:5353 : question PTR 43.wp.
+amyxu_debug: has_service 43.wp. 0
+172.25.0.4:5353 : question PTR 17.wp.
+amyxu_debug: has_service 17.wp. 0
+172.25.0.5:5353 : question PTR 50.wp.
+amyxu_debug: has_service 50.wp. 0
+172.25.0.3:5353 : question PTR 15.wp.
+amyxu_debug: has_service 15.wp. 0
+172.25.0.5:5353 : question PTR 37.wp.
+amyxu_debug: has_service 37.wp. 0
+172.25.0.5:5353 : question PTR 24.wp.
+amyxu_debug: has_service 24.wp. 0
+172.25.0.2:5353 : question PTR 17.wp.
+amyxu_debug: has_service 17.wp. 0
+172.25.0.3:5353 : question PTR 35.wp.
+amyxu_debug: has_service 35.wp. 0
+172.25.0.5:5353 : question PTR 47.wp.
+amyxu_debug: has_service 47.wp. 0
+172.25.0.3:5353 : question PTR 40.wp.
+amyxu_debug: has_service 40.wp. 0
+172.25.0.3:5353 : question PTR 33.wp.
+amyxu_debug: has_service 33.wp. 0
+172.25.0.3:5353 : question PTR 43.wp.
+amyxu_debug: has_service 43.wp. 0
+172.25.0.3:5353 : question PTR 50.wp.
+amyxu_debug: has_service 50.wp. 0
+/root/webpack-mdns/run_scripts/proxygen_static
+172.25.0.4:5353 : question PTR 24.wp.
+amyxu_debug: has_service 24.wp. 0
+172.25.0.2:5353 : question PTR 47.wp.
+amyxu_debug: has_service 47.wp. 0
+172.25.0.2:5353 : question PTR 45.wp.
+amyxu_debug: has_service 45.wp. 0
+172.25.0.2:5353 : question PTR 38.wp.
+amyxu_debug: has_service 38.wp. 0
+Sending mDNS query: 18.wp
+172.25.0.5:5353 : question PTR 18.wp.
+amyxu_debug: has_service 18.wp. 1
+  --> answer .18.wp. port 5353 (multicast)
+Reading mDNS query responses
+0
+172.25.0.5:5353 : answer 18.wp. PTR 18.wp. rclass 0x1 ttl 60 length 2
+Requested file curl -O http://172.25.0.5:11000/root/webpack-mdns/webpacks/18.wp
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  976k    0  976k    0     0  34.0M      0 --:--:-- --:--:-- --:--:-- 34.0M
+2
+Sending mDNS query: 42.wp
+172.25.0.5:5353 : question PTR 42.wp.
+amyxu_debug: has_service 42.wp. 0
+Reading mDNS query responses
+0
+172.25.0.4:5353 : answer 42.wp. PTR 42.wp. rclass 0x1 ttl 60 length 2
+Requested file curl -O http://172.25.0.4:11000/root/webpack-mdns/webpacks/42.wp
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  976k    0  976k    0     0   953M      0 --:--:-- --:--:-- --:--:--  953M
+2
+172.25.0.3:5353 : question PTR 22.wp.
+amyxu_debug: has_service 22.wp. 0
+172.25.0.6:5353 : question PTR 16.wp.
+amyxu_debug: has_service 16.wp. 1
+  --> answer .16.wp. port 5353 (multicast)
+172.25.0.6:5353 : question PTR 46.wp.
+amyxu_debug: has_service 46.wp. 0
+172.25.0.4:5353 : question PTR 45.wp.
+amyxu_debug: has_service 45.wp. 0
+Sending mDNS query: 35.wp
+172.25.0.5:5353 : question PTR 35.wp.
+amyxu_debug: has_service 35.wp. 0
+Reading mDNS query responses
+0
+172.25.0.3:5353 : answer 35.wp. PTR 35.wp. rclass 0x1 ttl 60 length 2
+Requested file curl -O http://172.25.0.3:11000/root/webpack-mdns/webpacks/35.wp
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  976k    0  976k    0     0   953M      0 --:--:-- --:--:-- --:--:--  953M
+2
+172.25.0.2:5353 : question PTR 20.wp.
+amyxu_debug: has_service 20.wp. 0
+172.25.0.3:5353 : question PTR 3.wp..
+amyxu_debug: has_service 3.wp.. 0
+Sending mDNS query: 44.wp
+172.25.0.5:5353 : question PTR 44.wp.
+amyxu_debug: has_service 44.wp. 0
+Reading mDNS query responses
+0
+172.25.0.4:5353 : answer 44.wp. PTR 44.wp. rclass 0x1 ttl 60 length 2
+Requested file curl -O http://172.25.0.4:11000/root/webpack-mdns/webpacks/44.wp
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  976k    0  976k    0     0   476M      0 --:--:-- --:--:-- --:--:--  476M
+2
+172.25.0.6:5353 : question PTR 48.wp.
+amyxu_debug: has_service 48.wp. 0
+172.25.0.6:5353 : question PTR 34.wp.
+amyxu_debug: has_service 34.wp. 0
+172.25.0.4:5353 : question PTR 46.wp.
+amyxu_debug: has_service 46.wp. 0
+172.25.0.4:5353 : question PTR 23.wp.
+amyxu_debug: has_service 23.wp. 0
+172.25.0.2:5353 : question PTR 31.wp.
+amyxu_debug: has_service 31.wp. 0
+172.25.0.6:5353 : question PTR 13.wp.
+amyxu_debug: has_service 13.wp. 1
+  --> answer .13.wp. port 5353 (multicast)
+Sending mDNS query: 33.wp
+172.25.0.5:5353 : question PTR 33.wp.
+amyxu_debug: has_service 33.wp. 0
+Reading mDNS query responses
+0
+172.25.0.3:5353 : answer 33.wp. PTR 33.wp. rclass 0x1 ttl 60 length 2
+Requested file curl -O http://172.25.0.3:11000/root/webpack-mdns/webpacks/33.wp
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  976k    0  976k    0     0   953M      0 --:--:-- --:--:-- --:--:--  953M
+2
+172.25.0.3:5353 : question PTR 48.wp.
+amyxu_debug: has_service 48.wp. 0
+172.25.0.4:5353 : question PTR 44.wp.
+amyxu_debug: has_service 44.wp. 0
+172.25.0.2:5353 : question PTR 42.wp.
+amyxu_debug: has_service 42.wp. 0
+172.25.0.6:5353 : question PTR 14.wp.
+amyxu_debug: has_service 14.wp. 1
+  --> answer .14.wp. port 5353 (multicast)
+Sending mDNS query: 49.wp
+172.25.0.5:5353 : question PTR 49.wp.
+amyxu_debug: has_service 49.wp. 0
+Reading mDNS query responses
+0
+172.25.0.4:5353 : answer 49.wp. PTR 49.wp. rclass 0x1 ttl 60 length 2
+Requested file curl -O http://172.25.0.4:11000/root/webpack-mdns/webpacks/49.wp
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  976k    0  976k    0     0   953M      0 --:--:-- --:--:-- --:--:--  953M
+2
+172.25.0.6:5353 : question PTR 44.wp.
+amyxu_debug: has_service 44.wp. 0
+172.25.0.4:5353 : question PTR 36.wp.
+amyxu_debug: has_service 36.wp. 0
+172.25.0.3:5353 : question PTR 30.wp.
+amyxu_debug: has_service 30.wp. 0
+172.25.0.6:5353 : question PTR 12.wp.
+amyxu_debug: has_service 12.wp. 1
+  --> answer .12.wp. port 5353 (multicast)
+172.25.0.4:5353 : question PTR 49.wp.
+amyxu_debug: has_service 49.wp. 0
+172.25.0.4:5353 : question PTR 4.wp..
+amyxu_debug: has_service 4.wp.. 0
+172.25.0.6:5353 : question PTR 24.wp.
+amyxu_debug: has_service 24.wp. 0
+172.25.0.6:5353 : question PTR 43.wp.
+amyxu_debug: has_service 43.wp. 0
+172.25.0.4:5353 : question PTR 31.wp.
+amyxu_debug: has_service 31.wp. 0
+172.25.0.2:5353 : question PTR 32.wp.
+amyxu_debug: has_service 32.wp. 0
+172.25.0.2:5353 : question PTR 37.wp.
+amyxu_debug: has_service 37.wp. 0
+172.25.0.2:5353 : question PTR 43.wp.
+amyxu_debug: has_service 43.wp. 0
+172.25.0.4:5353 : question PTR 17.wp.
+amyxu_debug: has_service 17.wp. 1
+  --> answer .17.wp. port 5353 (multicast)
+Sending mDNS query: 50.wp
+172.25.0.5:5353 : question PTR 50.wp.
+amyxu_debug: has_service 50.wp. 0
+Reading mDNS query responses
+0
+172.25.0.4:5353 : answer 50.wp. PTR 50.wp. rclass 0x1 ttl 60 length 2
+Requested file curl -O http://172.25.0.4:11000/root/webpack-mdns/webpacks/50.wp
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  976k    0  976k    0     0   953M      0 --:--:-- --:--:-- --:--:--  953M
+2
+172.25.0.3:5353 : question PTR 15.wp.
+amyxu_debug: has_service 15.wp. 1
+  --> answer .15.wp. port 5353 (multicast)
+Sending mDNS query: 37.wp
+172.25.0.5:5353 : question PTR 37.wp.
+amyxu_debug: has_service 37.wp. 0
+Reading mDNS query responses
+0
+172.25.0.3:5353 : answer 37.wp. PTR 37.wp. rclass 0x1 ttl 60 length 2
+Requested file curl -O http://172.25.0.3:11000/root/webpack-mdns/webpacks/37.wp
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  976k    0  976k    0     0   953M      0 --:--:-- --:--:-- --:--:--  953M
+2
+Sending mDNS query: 24.wp
+172.25.0.5:5353 : question PTR 24.wp.
+amyxu_debug: has_service 24.wp. 0
+Reading mDNS query responses
+0
+172.25.0.2:5353 : answer 24.wp. PTR 24.wp. rclass 0x1 ttl 60 length 2
+Requested file curl -O http://172.25.0.2:11000/root/webpack-mdns/webpacks/24.wp
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  976k    0  976k    0     0   476M      0 --:--:-- --:--:-- --:--:--  476M
+2
+172.25.0.2:5353 : question PTR 17.wp.
+amyxu_debug: has_service 17.wp. 1
+  --> answer .17.wp. port 5353 (multicast)
+172.25.0.3:5353 : question PTR 35.wp.
+amyxu_debug: has_service 35.wp. 0
+Sending mDNS query: 47.wp
+172.25.0.5:5353 : question PTR 47.wp.
+amyxu_debug: has_service 47.wp. 0
+Reading mDNS query responses
+0
+172.25.0.4:5353 : answer 47.wp. PTR 47.wp. rclass 0x1 ttl 60 length 2
+Requested file curl -O http://172.25.0.4:11000/root/webpack-mdns/webpacks/47.wp
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  976k    0  976k    0     0   476M      0 --:--:-- --:--:-- --:--:--  953M
+2
+>>>> START TIME OUTPUT
+0.06615907326340675
+0.033614758402109146
+0.03308101184666157
+0.033393748104572296
+0.03367927856743336
+0.03242985159158707
+0.03369633108377457
+0.03374579921364784
+0.015858007594943047
+0.033175889402627945
+<<<< END TIME OUTPUT
+Ran 10 queries.
+Average time per query: 0.03488337490707636 s.
+172.25.0.3:5353 : question PTR 40.wp.
+amyxu_debug: has_service 40.wp. 0
+172.25.0.3:5353 : question PTR 33.wp.
+amyxu_debug: has_service 33.wp. 0
+172.25.0.3:5353 : question PTR 43.wp.
+amyxu_debug: has_service 43.wp. 0
+172.25.0.3:5353 : question PTR 50.wp.
+amyxu_debug: has_service 50.wp. 0
+/root/webpack-mdns/run_scripts/proxygen_static
+172.25.0.4:5353 : question PTR 24.wp.
+amyxu_debug: has_service 24.wp. 1
+  --> answer .24.wp. port 5353 (multicast)
+Sending mDNS query: 47.wp
+172.25.0.2:5353 : question PTR 47.wp.
+amyxu_debug: has_service 47.wp. 0
+Reading mDNS query responses
+0
+172.25.0.4:5353 : answer 47.wp. PTR 47.wp. rclass 0x1 ttl 60 length 2
+Requested file curl -O http://172.25.0.4:11000/root/webpack-mdns/webpacks/47.wp
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  976k    0  976k    0     0  21.1M      0 --:--:-- --:--:-- --:--:-- 21.1M
+2
+Sending mDNS query: 45.wp
+172.25.0.2:5353 : question PTR 45.wp.
+amyxu_debug: has_service 45.wp. 0
+Reading mDNS query responses
+0
+172.25.0.4:5353 : answer 45.wp. PTR 45.wp. rclass 0x1 ttl 60 length 2
+Requested file curl -O http://172.25.0.4:11000/root/webpack-mdns/webpacks/45.wp
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  976k    0  976k    0     0   476M      0 --:--:-- --:--:-- --:--:--  476M
+2
+Sending mDNS query: 38.wp
+172.25.0.2:5353 : question PTR 38.wp.
+amyxu_debug: has_service 38.wp. 0
+Reading mDNS query responses
+0
+172.25.0.3:5353 : answer 38.wp. PTR 38.wp. rclass 0x1 ttl 60 length 2
+Requested file curl -O http://172.25.0.3:11000/root/webpack-mdns/webpacks/38.wp
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  976k    0  976k    0     0  56.0M      0 --:--:-- --:--:-- --:--:-- 56.0M
+2
+172.25.0.5:5353 : question PTR 18.wp.
+amyxu_debug: has_service 18.wp. 0
+172.25.0.5:5353 : question PTR 42.wp.
+amyxu_debug: has_service 42.wp. 0
+172.25.0.3:5353 : question PTR 22.wp.
+amyxu_debug: has_service 22.wp. 1
+  --> answer .22.wp. port 5353 (multicast)
+172.25.0.6:5353 : question PTR 16.wp.
+amyxu_debug: has_service 16.wp. 0
+172.25.0.6:5353 : question PTR 46.wp.
+amyxu_debug: has_service 46.wp. 0
+172.25.0.4:5353 : question PTR 45.wp.
+amyxu_debug: has_service 45.wp. 0
+172.25.0.5:5353 : question PTR 35.wp.
+amyxu_debug: has_service 35.wp. 0
+Sending mDNS query: 20.wp
+172.25.0.2:5353 : question PTR 20.wp.
+amyxu_debug: has_service 20.wp. 1
+  --> answer .20.wp. port 5353 (multicast)
+Reading mDNS query responses
+0
+172.25.0.2:5353 : answer 20.wp. PTR 20.wp. rclass 0x1 ttl 60 length 2
+Requested file curl -O http://172.25.0.2:11000/root/webpack-mdns/webpacks/20.wp
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  976k    0  976k    0     0   953M      0 --:--:-- --:--:-- --:--:--  953M
+2
+172.25.0.3:5353 : question PTR 3.wp..
+amyxu_debug: has_service 3.wp.. 0
+172.25.0.5:5353 : question PTR 44.wp.
+amyxu_debug: has_service 44.wp. 0
+172.25.0.6:5353 : question PTR 48.wp.
+amyxu_debug: has_service 48.wp. 0
+172.25.0.6:5353 : question PTR 34.wp.
+amyxu_debug: has_service 34.wp. 0
+172.25.0.4:5353 : question PTR 46.wp.
+amyxu_debug: has_service 46.wp. 0
+172.25.0.4:5353 : question PTR 23.wp.
+amyxu_debug: has_service 23.wp. 1
+  --> answer .23.wp. port 5353 (multicast)
+Sending mDNS query: 31.wp
+172.25.0.2:5353 : question PTR 31.wp.
+amyxu_debug: has_service 31.wp. 0
+Reading mDNS query responses
+0
+172.25.0.3:5353 : answer 31.wp. PTR 31.wp. rclass 0x1 ttl 60 length 2
+Requested file curl -O http://172.25.0.3:11000/root/webpack-mdns/webpacks/31.wp
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  976k    0  976k    0     0   476M      0 --:--:-- --:--:-- --:--:--  953M
+2
+172.25.0.6:5353 : question PTR 13.wp.
+amyxu_debug: has_service 13.wp. 0
+172.25.0.5:5353 : question PTR 33.wp.
+amyxu_debug: has_service 33.wp. 0
+172.25.0.3:5353 : question PTR 48.wp.
+amyxu_debug: has_service 48.wp. 0
+172.25.0.4:5353 : question PTR 44.wp.
+amyxu_debug: has_service 44.wp. 0
+Sending mDNS query: 42.wp
+172.25.0.2:5353 : question PTR 42.wp.
+amyxu_debug: has_service 42.wp. 0
+Reading mDNS query responses
+0
+172.25.0.4:5353 : answer 42.wp. PTR 42.wp. rclass 0x1 ttl 60 length 2
+Requested file curl -O http://172.25.0.4:11000/root/webpack-mdns/webpacks/42.wp
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  976k    0  976k    0     0   953M      0 --:--:-- --:--:-- --:--:--  953M
+2
+172.25.0.6:5353 : question PTR 14.wp.
+amyxu_debug: has_service 14.wp. 0
+172.25.0.5:5353 : question PTR 49.wp.
+amyxu_debug: has_service 49.wp. 0
+172.25.0.6:5353 : question PTR 44.wp.
+amyxu_debug: has_service 44.wp. 0
+172.25.0.4:5353 : question PTR 36.wp.
+amyxu_debug: has_service 36.wp. 0
+172.25.0.3:5353 : question PTR 30.wp.
+amyxu_debug: has_service 30.wp. 1
+  --> answer .30.wp. port 5353 (multicast)
+172.25.0.6:5353 : question PTR 12.wp.
+amyxu_debug: has_service 12.wp. 0
+172.25.0.4:5353 : question PTR 49.wp.
+amyxu_debug: has_service 49.wp. 0
+172.25.0.4:5353 : question PTR 4.wp..
+amyxu_debug: has_service 4.wp.. 0
+172.25.0.6:5353 : question PTR 24.wp.
+amyxu_debug: has_service 24.wp. 1
+  --> answer .24.wp. port 5353 (multicast)
+172.25.0.6:5353 : question PTR 43.wp.
+amyxu_debug: has_service 43.wp. 0
+172.25.0.4:5353 : question PTR 31.wp.
+amyxu_debug: has_service 31.wp. 0
+Sending mDNS query: 32.wp
+172.25.0.2:5353 : question PTR 32.wp.
+amyxu_debug: has_service 32.wp. 0
+Reading mDNS query responses
+0
+172.25.0.3:5353 : answer 32.wp. PTR 32.wp. rclass 0x1 ttl 60 length 2
+Requested file curl -O http://172.25.0.3:11000/root/webpack-mdns/webpacks/32.wp
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  976k    0  976k    0     0   476M      0 --:--:-- --:--:-- --:--:--  953M
+2
+Sending mDNS query: 37.wp
+172.25.0.2:5353 : question PTR 37.wp.
+amyxu_debug: has_service 37.wp. 0
+Reading mDNS query responses
+0
+172.25.0.3:5353 : answer 37.wp. PTR 37.wp. rclass 0x1 ttl 60 length 2
+Requested file curl -O http://172.25.0.3:11000/root/webpack-mdns/webpacks/37.wp
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  976k    0  976k    0     0   476M      0 --:--:-- --:--:-- --:--:--  953M
+2
+Sending mDNS query: 43.wp
+172.25.0.2:5353 : question PTR 43.wp.
+amyxu_debug: has_service 43.wp. 0
+Reading mDNS query responses
+0
+172.25.0.4:5353 : answer 43.wp. PTR 43.wp. rclass 0x1 ttl 60 length 2
+Requested file curl -O http://172.25.0.4:11000/root/webpack-mdns/webpacks/43.wp
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  976k    0  976k    0     0   476M      0 --:--:-- --:--:-- --:--:--  476M
+2
+172.25.0.4:5353 : question PTR 17.wp.
+amyxu_debug: has_service 17.wp. 0
+172.25.0.5:5353 : question PTR 50.wp.
+amyxu_debug: has_service 50.wp. 0
+172.25.0.3:5353 : question PTR 15.wp.
+amyxu_debug: has_service 15.wp. 0
+172.25.0.5:5353 : question PTR 37.wp.
+amyxu_debug: has_service 37.wp. 0
+172.25.0.5:5353 : question PTR 24.wp.
+amyxu_debug: has_service 24.wp. 1
+  --> answer .24.wp. port 5353 (multicast)
+Sending mDNS query: 17.wp
+172.25.0.2:5353 : question PTR 17.wp.
+amyxu_debug: has_service 17.wp. 0
+Reading mDNS query responses
+0
+172.25.0.5:5353 : answer 17.wp. PTR 17.wp. rclass 0x1 ttl 60 length 2
+Requested file curl -O http://172.25.0.5:11000/root/webpack-mdns/webpacks/17.wp
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  976k    0  976k    0     0   953M      0 --:--:-- --:--:-- --:--:--  953M
+2
+>>>> START TIME OUTPUT
+0.06498088873922825
+0.03257120028138161
+0.06594648025929928
+0.033516738563776016
+0.03272878751158714
+0.017207274213433266
+0.0162045881152153
+0.01584680937230587
+0.015927227213978767
+0.033243102952837944
+<<<< END TIME OUTPUT
+Ran 10 queries.
+Average time per query: 0.032817309722304344 s.
+172.25.0.3:5353 : question PTR 35.wp.
+amyxu_debug: has_service 35.wp. 0
+172.25.0.5:5353 : question PTR 47.wp.
+amyxu_debug: has_service 47.wp. 0
+172.25.0.3:5353 : question PTR 40.wp.
+amyxu_debug: has_service 40.wp. 0
+172.25.0.3:5353 : question PTR 33.wp.
+amyxu_debug: has_service 33.wp. 0
+172.25.0.3:5353 : question PTR 43.wp.
+amyxu_debug: has_service 43.wp. 0
+172.25.0.3:5353 : question PTR 50.wp.
+amyxu_debug: has_service 50.wp. 0
+/root/webpack-mdns/run_scripts/proxygen_static
+172.25.0.4:5353 : question PTR 24.wp.
+amyxu_debug: has_service 24.wp. 0
+172.25.0.2:5353 : question PTR 47.wp.
+amyxu_debug: has_service 47.wp. 0
+172.25.0.2:5353 : question PTR 45.wp.
+amyxu_debug: has_service 45.wp. 0
+172.25.0.2:5353 : question PTR 38.wp.
+amyxu_debug: has_service 38.wp. 1
+  --> answer .38.wp. port 5353 (multicast)
+172.25.0.5:5353 : question PTR 18.wp.
+amyxu_debug: has_service 18.wp. 0
+172.25.0.5:5353 : question PTR 42.wp.
+amyxu_debug: has_service 42.wp. 0
+Sending mDNS query: 22.wp
+172.25.0.3:5353 : question PTR 22.wp.
+amyxu_debug: has_service 22.wp. 0
+Reading mDNS query responses
+0
+172.25.0.2:5353 : answer 22.wp. PTR 22.wp. rclass 0x1 ttl 60 length 2
+Requested file curl -O http://172.25.0.2:11000/root/webpack-mdns/webpacks/22.wp
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  976k    0  976k    0     0   476M      0 --:--:-- --:--:-- --:--:--  476M
+2
+172.25.0.6:5353 : question PTR 16.wp.
+amyxu_debug: has_service 16.wp. 0
+172.25.0.6:5353 : question PTR 46.wp.
+amyxu_debug: has_service 46.wp. 0
+172.25.0.4:5353 : question PTR 45.wp.
+amyxu_debug: has_service 45.wp. 0
+172.25.0.5:5353 : question PTR 35.wp.
+amyxu_debug: has_service 35.wp. 1
+  --> answer .35.wp. port 5353 (multicast)
+172.25.0.2:5353 : question PTR 20.wp.
+amyxu_debug: has_service 20.wp. 0
+Sending mDNS query: 3.wp
+172.25.0.3:5353 : question PTR 3.wp..
+amyxu_debug: has_service 3.wp.. 0
+Reading mDNS query responses
+0
+172.25.0.6:5353 : answer 3.wp. PTR 3.wp. rclass 0x1 ttl 60 length 2
+Requested file curl -O http://172.25.0.6:11000/root/webpack-mdns/webpacks/3.wp
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  976k    0  976k    0     0  45.4M      0 --:--:-- --:--:-- --:--:-- 45.4M
+2
+172.25.0.5:5353 : question PTR 44.wp.
+amyxu_debug: has_service 44.wp. 0
+172.25.0.6:5353 : question PTR 48.wp.
+amyxu_debug: has_service 48.wp. 0
+172.25.0.6:5353 : question PTR 34.wp.
+amyxu_debug: has_service 34.wp. 1
+  --> answer .34.wp. port 5353 (multicast)
+172.25.0.4:5353 : question PTR 46.wp.
+amyxu_debug: has_service 46.wp. 0
+172.25.0.4:5353 : question PTR 23.wp.
+amyxu_debug: has_service 23.wp. 0
+172.25.0.2:5353 : question PTR 31.wp.
+amyxu_debug: has_service 31.wp. 1
+  --> answer .31.wp. port 5353 (multicast)
+172.25.0.6:5353 : question PTR 13.wp.
+amyxu_debug: has_service 13.wp. 0
+172.25.0.5:5353 : question PTR 33.wp.
+amyxu_debug: has_service 33.wp. 1
+  --> answer .33.wp. port 5353 (multicast)
+Sending mDNS query: 48.wp
+172.25.0.3:5353 : question PTR 48.wp.
+amyxu_debug: has_service 48.wp. 0
+Reading mDNS query responses
+0
+172.25.0.4:5353 : answer 48.wp. PTR 48.wp. rclass 0x1 ttl 60 length 2
+Requested file curl -O http://172.25.0.4:11000/root/webpack-mdns/webpacks/48.wp
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  976k    0  976k    0     0   953M      0 --:--:-- --:--:-- --:--:--  953M
+2
+172.25.0.4:5353 : question PTR 44.wp.
+amyxu_debug: has_service 44.wp. 0
+172.25.0.2:5353 : question PTR 42.wp.
+amyxu_debug: has_service 42.wp. 0
+172.25.0.6:5353 : question PTR 14.wp.
+amyxu_debug: has_service 14.wp. 0
+172.25.0.5:5353 : question PTR 49.wp.
+amyxu_debug: has_service 49.wp. 0
+172.25.0.6:5353 : question PTR 44.wp.
+amyxu_debug: has_service 44.wp. 0
+172.25.0.4:5353 : question PTR 36.wp.
+amyxu_debug: has_service 36.wp. 1
+  --> answer .36.wp. port 5353 (multicast)
+Sending mDNS query: 30.wp
+172.25.0.3:5353 : question PTR 30.wp.
+amyxu_debug: has_service 30.wp. 0
+Reading mDNS query responses
+0
+172.25.0.2:5353 : answer 30.wp. PTR 30.wp. rclass 0x1 ttl 60 length 2
+Requested file curl -O http://172.25.0.2:11000/root/webpack-mdns/webpacks/30.wp
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  976k    0  976k    0     0   953M      0 --:--:-- --:--:-- --:--:--  953M
+2
+172.25.0.6:5353 : question PTR 12.wp.
+amyxu_debug: has_service 12.wp. 0
+172.25.0.4:5353 : question PTR 49.wp.
+amyxu_debug: has_service 49.wp. 0
+172.25.0.4:5353 : question PTR 4.wp..
+amyxu_debug: has_service 4.wp.. 0
+172.25.0.6:5353 : question PTR 24.wp.
+amyxu_debug: has_service 24.wp. 0
+172.25.0.6:5353 : question PTR 43.wp.
+amyxu_debug: has_service 43.wp. 0
+172.25.0.4:5353 : question PTR 31.wp.
+amyxu_debug: has_service 31.wp. 1
+  --> answer .31.wp. port 5353 (multicast)
+172.25.0.2:5353 : question PTR 32.wp.
+amyxu_debug: has_service 32.wp. 1
+  --> answer .32.wp. port 5353 (multicast)
+172.25.0.2:5353 : question PTR 37.wp.
+amyxu_debug: has_service 37.wp. 1
+  --> answer .37.wp. port 5353 (multicast)
+172.25.0.2:5353 : question PTR 43.wp.
+amyxu_debug: has_service 43.wp. 0
+172.25.0.4:5353 : question PTR 17.wp.
+amyxu_debug: has_service 17.wp. 0
+172.25.0.5:5353 : question PTR 50.wp.
+amyxu_debug: has_service 50.wp. 0
+Sending mDNS query: 15.wp
+172.25.0.3:5353 : question PTR 15.wp.
+amyxu_debug: has_service 15.wp. 0
+Reading mDNS query responses
+0
+172.25.0.5:5353 : answer 15.wp. PTR 15.wp. rclass 0x1 ttl 60 length 2
+Requested file curl -O http://172.25.0.5:11000/root/webpack-mdns/webpacks/15.wp
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  976k    0  976k    0     0   953M      0 --:--:-- --:--:-- --:--:--  953M
+2
+172.25.0.5:5353 : question PTR 37.wp.
+amyxu_debug: has_service 37.wp. 1
+  --> answer .37.wp. port 5353 (multicast)
+172.25.0.5:5353 : question PTR 24.wp.
+amyxu_debug: has_service 24.wp. 0
+172.25.0.2:5353 : question PTR 17.wp.
+amyxu_debug: has_service 17.wp. 0
+Sending mDNS query: 35.wp
+172.25.0.3:5353 : question PTR 35.wp.
+amyxu_debug: has_service 35.wp. 1
+  --> answer .35.wp. port 5353 (multicast)
+Reading mDNS query responses
+0
+172.25.0.3:5353 : answer 35.wp. PTR 35.wp. rclass 0x1 ttl 60 length 2
+Requested file curl -O http://172.25.0.3:11000/root/webpack-mdns/webpacks/35.wp
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  976k    0  976k    0     0   953M      0 --:--:-- --:--:-- --:--:--  953M
+2
+172.25.0.5:5353 : question PTR 47.wp.
+amyxu_debug: has_service 47.wp. 0
+Sending mDNS query: 40.wp
+172.25.0.3:5353 : question PTR 40.wp.
+amyxu_debug: has_service 40.wp. 0
+Reading mDNS query responses
+0
+172.25.0.4:5353 : answer 40.wp. PTR 40.wp. rclass 0x1 ttl 60 length 2
+Requested file curl -O http://172.25.0.4:11000/root/webpack-mdns/webpacks/40.wp
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  976k    0  976k    0     0   476M      0 --:--:-- --:--:-- --:--:--  953M
+2
+Sending mDNS query: 33.wp
+172.25.0.3:5353 : question PTR 33.wp.
+amyxu_debug: has_service 33.wp. 1
+  --> answer .33.wp. port 5353 (multicast)
+Reading mDNS query responses
+0
+172.25.0.3:5353 : answer 33.wp. PTR 33.wp. rclass 0x1 ttl 60 length 2
+Requested file curl -O http://172.25.0.3:11000/root/webpack-mdns/webpacks/33.wp
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  976k    0  976k    0     0   953M      0 --:--:-- --:--:-- --:--:--  953M
+2
+Sending mDNS query: 43.wp
+172.25.0.3:5353 : question PTR 43.wp.
+amyxu_debug: has_service 43.wp. 0
+Reading mDNS query responses
+0
+172.25.0.4:5353 : answer 43.wp. PTR 43.wp. rclass 0x1 ttl 60 length 2
+Requested file curl -O http://172.25.0.4:11000/root/webpack-mdns/webpacks/43.wp
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  976k    0  976k    0     0   476M      0 --:--:-- --:--:-- --:--:--  953M
+2
+Sending mDNS query: 50.wp
+172.25.0.3:5353 : question PTR 50.wp.
+amyxu_debug: has_service 50.wp. 0
+Reading mDNS query responses
+0
+172.25.0.4:5353 : answer 50.wp. PTR 50.wp. rclass 0x1 ttl 60 length 2
+Requested file curl -O http://172.25.0.4:11000/root/webpack-mdns/webpacks/50.wp
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  976k    0  976k    0     0   953M      0 --:--:-- --:--:-- --:--:--  953M
+2
+>>>> START TIME OUTPUT
+0.03386242128908634
+0.06592700816690922
+0.033638231456279755
+0.03269452415406704
+0.03382767364382744
+0.03278122842311859
+0.03378044441342354
+0.0338073018938303
+0.03378025256097317
+0.03373882733285427
+<<<< END TIME OUTPUT
+Ran 10 queries.
+Average time per query: 0.03678379133343697 s.
+/root/webpack-mdns/run_scripts/proxygen_static
+Sending mDNS query: 24.wp
+172.25.0.4:5353 : question PTR 24.wp.
+amyxu_debug: has_service 24.wp. 0
+Reading mDNS query responses
+0
+172.25.0.2:5353 : answer 24.wp. PTR 24.wp. rclass 0x1 ttl 60 length 2
+Requested file curl -O http://172.25.0.2:11000/root/webpack-mdns/webpacks/24.wp
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  976k    0  976k    0     0  50.1M      0 --:--:-- --:--:-- --:--:-- 50.1M
+2
+172.25.0.2:5353 : question PTR 47.wp.
+amyxu_debug: has_service 47.wp. 1
+  --> answer .47.wp. port 5353 (multicast)
+172.25.0.2:5353 : question PTR 45.wp.
+amyxu_debug: has_service 45.wp. 1
+  --> answer .45.wp. port 5353 (multicast)
+172.25.0.2:5353 : question PTR 38.wp.
+amyxu_debug: has_service 38.wp. 0
+172.25.0.5:5353 : question PTR 18.wp.
+amyxu_debug: has_service 18.wp. 0
+172.25.0.5:5353 : question PTR 42.wp.
+amyxu_debug: has_service 42.wp. 1
+  --> answer .42.wp. port 5353 (multicast)
+172.25.0.3:5353 : question PTR 22.wp.
+amyxu_debug: has_service 22.wp. 0
+172.25.0.6:5353 : question PTR 16.wp.
+amyxu_debug: has_service 16.wp. 0
+172.25.0.6:5353 : question PTR 46.wp.
+amyxu_debug: has_service 46.wp. 1
+  --> answer .46.wp. port 5353 (multicast)
+Sending mDNS query: 45.wp
+172.25.0.4:5353 : question PTR 45.wp.
+amyxu_debug: has_service 45.wp. 1
+  --> answer .45.wp. port 5353 (multicast)
+Reading mDNS query responses
+0
+172.25.0.4:5353 : answer 45.wp. PTR 45.wp. rclass 0x1 ttl 60 length 2
+Requested file curl -O http://172.25.0.4:11000/root/webpack-mdns/webpacks/45.wp
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  976k    0  976k    0     0   953M      0 --:--:-- --:--:-- --:--:--  953M
+2
+172.25.0.5:5353 : question PTR 35.wp.
+amyxu_debug: has_service 35.wp. 0
+172.25.0.2:5353 : question PTR 20.wp.
+amyxu_debug: has_service 20.wp. 0
+172.25.0.3:5353 : question PTR 3.wp..
+amyxu_debug: has_service 3.wp.. 0
+172.25.0.5:5353 : question PTR 44.wp.
+amyxu_debug: has_service 44.wp. 1
+  --> answer .44.wp. port 5353 (multicast)
+172.25.0.6:5353 : question PTR 48.wp.
+amyxu_debug: has_service 48.wp. 1
+  --> answer .48.wp. port 5353 (multicast)
+172.25.0.6:5353 : question PTR 34.wp.
+amyxu_debug: has_service 34.wp. 0
+Sending mDNS query: 46.wp
+172.25.0.4:5353 : question PTR 46.wp.
+amyxu_debug: has_service 46.wp. 1
+  --> answer .46.wp. port 5353 (multicast)
+Reading mDNS query responses
+0
+172.25.0.4:5353 : answer 46.wp. PTR 46.wp. rclass 0x1 ttl 60 length 2
+Requested file curl -O http://172.25.0.4:11000/root/webpack-mdns/webpacks/46.wp
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  976k    0  976k    0     0   953M      0 --:--:-- --:--:-- --:--:--  953M
+2
+Sending mDNS query: 23.wp
+172.25.0.4:5353 : question PTR 23.wp.
+amyxu_debug: has_service 23.wp. 0
+Reading mDNS query responses
+0
+172.25.0.2:5353 : answer 23.wp. PTR 23.wp. rclass 0x1 ttl 60 length 2
+Requested file curl -O http://172.25.0.2:11000/root/webpack-mdns/webpacks/23.wp
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  976k    0  976k    0     0   476M      0 --:--:-- --:--:-- --:--:--  476M
+2
+172.25.0.2:5353 : question PTR 31.wp.
+amyxu_debug: has_service 31.wp. 0
+172.25.0.6:5353 : question PTR 13.wp.
+amyxu_debug: has_service 13.wp. 0
+172.25.0.5:5353 : question PTR 33.wp.
+amyxu_debug: has_service 33.wp. 0
+172.25.0.3:5353 : question PTR 48.wp.
+amyxu_debug: has_service 48.wp. 1
+  --> answer .48.wp. port 5353 (multicast)
+Sending mDNS query: 44.wp
+172.25.0.4:5353 : question PTR 44.wp.
+amyxu_debug: has_service 44.wp. 1
+  --> answer .44.wp. port 5353 (multicast)
+Reading mDNS query responses
+0
+172.25.0.4:5353 : answer 44.wp. PTR 44.wp. rclass 0x1 ttl 60 length 2
+Requested file curl -O http://172.25.0.4:11000/root/webpack-mdns/webpacks/44.wp
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  976k    0  976k    0     0   953M      0 --:--:-- --:--:-- --:--:--  953M
+2
+172.25.0.2:5353 : question PTR 42.wp.
+amyxu_debug: has_service 42.wp. 1
+  --> answer .42.wp. port 5353 (multicast)
+172.25.0.6:5353 : question PTR 14.wp.
+amyxu_debug: has_service 14.wp. 0
+172.25.0.5:5353 : question PTR 49.wp.
+amyxu_debug: has_service 49.wp. 1
+  --> answer .49.wp. port 5353 (multicast)
+172.25.0.6:5353 : question PTR 44.wp.
+amyxu_debug: has_service 44.wp. 1
+  --> answer .44.wp. port 5353 (multicast)
+Sending mDNS query: 36.wp
+172.25.0.4:5353 : question PTR 36.wp.
+amyxu_debug: has_service 36.wp. 0
+Reading mDNS query responses
+0
+172.25.0.3:5353 : answer 36.wp. PTR 36.wp. rclass 0x1 ttl 60 length 2
+Requested file curl -O http://172.25.0.3:11000/root/webpack-mdns/webpacks/36.wp
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  976k    0  976k    0     0   953M      0 --:--:-- --:--:-- --:--:--  953M
+2
+172.25.0.3:5353 : question PTR 30.wp.
+amyxu_debug: has_service 30.wp. 0
+172.25.0.6:5353 : question PTR 12.wp.
+amyxu_debug: has_service 12.wp. 0
+Sending mDNS query: 49.wp
+172.25.0.4:5353 : question PTR 49.wp.
+amyxu_debug: has_service 49.wp. 1
+  --> answer .49.wp. port 5353 (multicast)
+Reading mDNS query responses
+0
+172.25.0.4:5353 : answer 49.wp. PTR 49.wp. rclass 0x1 ttl 60 length 2
+Requested file curl -O http://172.25.0.4:11000/root/webpack-mdns/webpacks/49.wp
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  976k    0  976k    0     0   953M      0 --:--:-- --:--:-- --:--:--  953M
+2
+Sending mDNS query: 4.wp
+172.25.0.4:5353 : question PTR 4.wp..
+amyxu_debug: has_service 4.wp.. 0
+Reading mDNS query responses
+0
+172.25.0.6:5353 : answer 4.wp. PTR 4.wp. rclass 0x1 ttl 60 length 2
+Requested file curl -O http://172.25.0.6:11000/root/webpack-mdns/webpacks/4.wp
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  976k    0  976k    0     0   317M      0 --:--:-- --:--:-- --:--:--  317M
+2
+172.25.0.6:5353 : question PTR 24.wp.
+amyxu_debug: has_service 24.wp. 0
+172.25.0.6:5353 : question PTR 43.wp.
+amyxu_debug: has_service 43.wp. 1
+  --> answer .43.wp. port 5353 (multicast)
+Sending mDNS query: 31.wp
+172.25.0.4:5353 : question PTR 31.wp.
+amyxu_debug: has_service 31.wp. 0
+Reading mDNS query responses
+0
+172.25.0.3:5353 : answer 31.wp. PTR 31.wp. rclass 0x1 ttl 60 length 2
+Requested file curl -O http://172.25.0.3:11000/root/webpack-mdns/webpacks/31.wp
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  976k    0  976k    0     0   953M      0 --:--:-- --:--:-- --:--:--  953M
+2
+172.25.0.2:5353 : question PTR 32.wp.
+amyxu_debug: has_service 32.wp. 0
+172.25.0.2:5353 : question PTR 37.wp.
+amyxu_debug: has_service 37.wp. 0
+172.25.0.2:5353 : question PTR 43.wp.
+amyxu_debug: has_service 43.wp. 1
+  --> answer .43.wp. port 5353 (multicast)
+Sending mDNS query: 17.wp
+172.25.0.4:5353 : question PTR 17.wp.
+amyxu_debug: has_service 17.wp. 0
+Reading mDNS query responses
+0
+172.25.0.5:5353 : answer 17.wp. PTR 17.wp. rclass 0x1 ttl 60 length 2
+Requested file curl -O http://172.25.0.5:11000/root/webpack-mdns/webpacks/17.wp
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  976k    0  976k    0     0   953M      0 --:--:-- --:--:-- --:--:--  953M
+2
+>>>> START TIME OUTPUT
+0.031841401010751724
+0.03292749263346195
+0.033225927501916885
+0.016067173331975937
+0.03318840079009533
+0.033602138981223106
+0.03281082585453987
+0.016083624213933945
+0.032691940665245056
+0.03379150852560997
+<<<< END TIME OUTPUT
+Ran 10 queries.
+Average time per query: 0.02962304335087538 s.
+172.25.0.5:5353 : question PTR 50.wp.
+amyxu_debug: has_service 50.wp. 1
+  --> answer .50.wp. port 5353 (multicast)
+172.25.0.3:5353 : question PTR 15.wp.
+amyxu_debug: has_service 15.wp. 0
+172.25.0.5:5353 : question PTR 37.wp.
+amyxu_debug: has_service 37.wp. 0
+172.25.0.5:5353 : question PTR 24.wp.
+amyxu_debug: has_service 24.wp. 0
+172.25.0.2:5353 : question PTR 17.wp.
+amyxu_debug: has_service 17.wp. 0
+172.25.0.3:5353 : question PTR 35.wp.
+amyxu_debug: has_service 35.wp. 0
+172.25.0.5:5353 : question PTR 47.wp.
+amyxu_debug: has_service 47.wp. 1
+  --> answer .47.wp. port 5353 (multicast)
+172.25.0.3:5353 : question PTR 40.wp.
+amyxu_debug: has_service 40.wp. 1
+  --> answer .40.wp. port 5353 (multicast)
+172.25.0.3:5353 : question PTR 33.wp.
+amyxu_debug: has_service 33.wp. 0
+172.25.0.3:5353 : question PTR 43.wp.
+amyxu_debug: has_service 43.wp. 1
+  --> answer .43.wp. port 5353 (multicast)
+172.25.0.3:5353 : question PTR 50.wp.
+amyxu_debug: has_service 50.wp. 1
+  --> answer .50.wp. port 5353 (multicast)
