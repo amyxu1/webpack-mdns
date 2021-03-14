@@ -16,15 +16,17 @@ def main(argv):
     nic = 'eth0'
     if len(argv) > 5:
         nic = argv[5]
-    ip = ni.ifaddresses(nic)[ni.AF_INET][0]['addr']
+    print(nic)
+    #ip = ni.ifaddresses(nic)[ni.AF_INET][0]['addr']
+    ip = argv[6]
     delay = '100'
-    if len(argv) > 6:
-        delay = argv[6]
+    if len(argv) > 7:
+        delay = argv[7]
 
     subprocess.run('tc qdisc add dev eth0 root netem delay ' + delay + 'ms', shell=True)
     subprocess.Popen('/root/webpack-mdns/run_scripts/mdns-controller --net ' + nic + ' --ip ' + ip + ' --listen ' + listen_webpacks, shell=True)
     time.sleep(time_wait)
-    subprocess.run('python3 /root/webpack-mdns/run_scripts/auto_query.py ' + num_queries + ' ' + query_webpacks, shell=True)
+    subprocess.run('python3 /root/webpack-mdns/run_scripts/auto_query.py '  + num_queries + ' ' + nic + ' '  + query_webpacks, shell=True)
     time.sleep(60)
 
 
