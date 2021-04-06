@@ -26,7 +26,7 @@ NetworkController::NetworkController(std::string nic, std::string hostip, absl::
 {
   m_services = services;
   m_urlTable = new absl::flat_hash_map<std::string, absl::flat_hash_set<std::string>>();
-  m_port = MDNS_PORT;
+  m_port = 5353;
   m_interface = nic;
   m_ipaddrstring = hostip;
   setup_ipv4();
@@ -134,7 +134,7 @@ void NetworkController::query(std::string service, mdns_record_callback_fn callb
     {
       if (FD_ISSET(m_socket, &readfs)) {
 	int status = mdns_query_recv(m_socket, buffer, capacity, callback, user_data, query_id);
-	std::cout << status << std::endl;
+	std::cout << "status found : " << status << std::endl;
 	if (status) // indicates non-zero number of responses read
 	  break;
       }
@@ -253,10 +253,11 @@ NetworkController::service_callback(int sock, const struct sockaddr* from,
     std::string service(mdns_record_parse_ptr(data, size, record_offset, record_length,
       namebuffer, sizeof(namebuffer)).str);
     std::cout << fromaddrstr << " : question PTR " << service << "\n";
-    std::cout << "amyxu_debug: " << "has_service " << service << " " << has_service(service) << "\n";
+    //std::cout << "amyxu_debug: " << "has_service " << service << " " << has_service(service) << "\n";
+    //std::cout << "amyxu_debug: " << "response address " << fromaddrstr << "\n";
     // if host has web bundle, respond
     if (has_service(service)) {
-      uint16_t unicast = rclass & MDNS_UNICAST_RESPONSE;
+      uint16_t unicast = /*rclass & MDNS_UNICAST_RESPONSE*/1;
 
       std::cout << "  --> answer " << m_hostname << "." << service << " port " << m_port
                 << " (" << (unicast ? "unicast" : "multicast") << ")\n";
@@ -266,7 +267,7 @@ NetworkController::service_callback(int sock, const struct sockaddr* from,
 
       int end_idx = service.find_last_not_of('.');
       std::string service_ret = service.substr(0, end_idx+1);
-
+      //std::cout << "addrlen " << addrlen << "\n";
       mdns_query_answer(sock, from, addrlen, sendbuffer, sizeof(sendbuffer), 
         query_id, service_ret.c_str(), service_ret.length(), 
         m_hostname.c_str(), m_hostname.length(), m_addr->sin_addr.s_addr,
