@@ -86,11 +86,14 @@ private:
   bool has_service(std::string srv_name)
   {
     int end_pos = srv_name.find_last_not_of('.');
-    return m_services.contains(srv_name.substr(0, end_pos+1));
+    return m_resourceMap->count(srv_name.substr(0, end_pos+1));
   }
 
   /** table mapping from hostname to available web bundles */
   absl::flat_hash_map<std::string, absl::flat_hash_set<std::string>> *m_urlTable;
+
+  /** table mapping from web bundle to hostname */
+  absl::flat_hash_map<std::string, std::string> *m_resourceMap;
 
   /** services (web bundles) that this host has */
   absl::flat_hash_set<std::string> m_services;
