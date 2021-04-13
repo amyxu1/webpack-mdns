@@ -26,7 +26,7 @@ NetworkController::NetworkController(std::string nic, std::string hostip, absl::
 {
   m_services = services;
   m_urlTable = new absl::flat_hash_map<std::string, absl::flat_hash_set<std::string>>();
-  m_port = MDNS_PORT;
+  m_port = 5353;
   m_interface = nic;
   m_ipaddrstring = hostip;
   setup_ipv4();
@@ -42,6 +42,7 @@ void NetworkController::setup_ipv4()
   m_addr->sin_port = htons(MDNS_PORT);
   //std::string interface = "enx00808e9a856d";
   m_socket = mdns_socket_open_ipv4(m_addr, const_cast<char *>(m_interface.c_str()));
+  std::cout << m_socket << " socket\n";
   //mdns_socket_setup_ipv4(m_socket, m_addr, interface);
 }
 
@@ -106,11 +107,12 @@ void NetworkController::query(std::string service, mdns_record_callback_fn callb
 
   // queryid of 0 signifies a multicast query
   int query_id = mdns_query_send(m_socket, MDNS_RECORDTYPE_PTR, service.c_str(), 
-           service.length(), buffer, capacity, 0 /*queryid*/);
+           service.length(), buffer, capacity, 1/*queryid*/);
+  /** COMMENTED OUT FOR CENTRALIZED
   if (query_id)
   {
     std::cout << "Failed to send mDNS query: " << strerror(errno) << "\n";
-  }
+  }*/
   
   std::cout << "Reading mDNS query responses\n";
   int res;
@@ -129,10 +131,14 @@ void NetworkController::query(std::string service, mdns_record_callback_fn callb
     }
     FD_SET(m_socket, &readfs);
 
+    std::cout << "going to start selecting... ";
+    // ISSUE: the select isn't popping
     res = select(nfds, &readfs, NULL, NULL, &timeout);
     if (res > 0)
     {
+      std::cout << "select returned > 0\n";
       if (FD_ISSET(m_socket, &readfs)) {
+	std::cout << "the fd is set right\n";
 	int status = mdns_query_recv(m_socket, buffer, capacity, callback, user_data, query_id);
 	std::cout << status << std::endl;
 	if (status) // indicates non-zero number of responses read
