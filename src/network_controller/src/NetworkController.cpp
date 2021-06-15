@@ -302,13 +302,13 @@ void NetworkController::get_file(std::string server_address, std::string filenam
   //system(command.c_str());
   
   CURL *curl_handle;
-  std::string url = "http://" + server_address + full_filename;
+  std::string url = "http://" + server_address + "/"  + full_filename;
   FILE *download;
 
   // TODO: Move cleanup/teardown to open and close fns
   curl_global_init(CURL_GLOBAL_ALL);
   curl_handle = curl_easy_init();
-  curl_easy_setopt(curl_handle, CURLOPT_URL, url);
+  curl_easy_setopt(curl_handle, CURLOPT_URL, url.c_str());
   curl_easy_setopt(curl_handle, CURLOPT_WRITEFUNCTION, write_data);
 
   download = fopen(full_filename.c_str(), "wb");
